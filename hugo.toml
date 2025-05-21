@@ -1,5 +1,7 @@
-baseURL = 'https://quinnw7.github.io/blog/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = 'ananke'
-publishDir = "docs"
+baseURL = "https://example.com"
+languageCode = "en-us"
+theme = "ananke"
+title = "Quinn's Blog"
+
+[params]
+recent_posts_number = 5  # 首页显示的最新文章数量
