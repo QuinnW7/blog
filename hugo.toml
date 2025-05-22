@@ -6,3 +6,23 @@ publishDir = "docs"  # 将生成的文件输出到 docs/ 目录
 
 [params]
 recent_posts_number = 5  # 首页显示的最新文章数量
+body_classes = "bodoni bg-near-white"
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+[[menu.main]]
+name = "Tech"
+url = "/tech"
+weight = 2
+[[menu.main]]
+name = "Read"
+url = "/read"
+weight = 3
+[[menu.main]]
+name = "Essay"
+url = "/essay"
+weight = 4
+
+
