@@ -20,7 +20,7 @@
       <link>https://quinnw7.github.io/blog/posts/%E6%99%BA%E8%83%BD%E4%BD%93%E5%88%9B%E4%BD%9C%E5%B9%B3%E5%8F%B0/</link>
       <pubDate>Thu, 22 May 2025 10:12:33 +0800</pubDate>
       <guid>https://quinnw7.github.io/blog/posts/%E6%99%BA%E8%83%BD%E4%BD%93%E5%88%9B%E4%BD%9C%E5%B9%B3%E5%8F%B0/</guid>
-      <description>&lt;h1 id=&#34;1-团队空间&#34;&gt;1 团队空间&lt;/h1&gt;&#xA;&lt;h1 id=&#34;2-智能体&#34;&gt;2 智能体&lt;/h1&gt;&#xA;&lt;h2 id=&#34;21-角色智能体&#34;&gt;2.1 角色智能体&lt;/h2&gt;&#xA;&lt;h2 id=&#34;22-公众号类智能体&#34;&gt;2.2 公众号类智能体&lt;/h2&gt;&#xA;&lt;p&gt;目标：支持公众号主在微信开放平台创建公众号文章类的智能体，C端用户在微信公众号内进行聊天时使用公众号主的公众号文章知识进行回答。&#xA;数据：周日均活跃用户数：1w+，周日均prompt总数：2w+，周日均对话智能体个数：2000+。&#xA;核心功能：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;配置智能体：支持创作者配置提示词即可开通公众号文档类智能体知识库：&lt;/li&gt;&#xA;&lt;li&gt;支持公众号文章类的知识库；包含离线链路的文档解析、文档分片、分片入检索库，在线链路的数据检索。&lt;/li&gt;&#xA;&lt;li&gt;会话链路支持闲聊功能：优化聊天链路， 支持闲聊，使得联调具有风格化特点&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;23-工作流类智能体&#34;&gt;2.3 工作流类智能体&lt;/h2&gt;&#xA;&lt;h2 id=&#34;24-通用智能体&#34;&gt;2.4 通用智能体&lt;/h2&gt;&#xA;&lt;h1 id=&#34;3-插件&#34;&gt;3 插件&lt;/h1&gt;&#xA;&lt;h1 id=&#34;4-知识库&#34;&gt;4 知识库&lt;/h1&gt;&#xA;&lt;h1 id=&#34;5-工作流&#34;&gt;5 工作流&lt;/h1&gt;&#xA;&lt;h1 id=&#34;6-商店&#34;&gt;6 商店&lt;/h1&gt;&#xA;&lt;h1 id=&#34;7-渠道分发&#34;&gt;7 渠道分发&lt;/h1&gt;&#xA;&lt;p&gt;Visit the &lt;a href=&#34;https://yuanqi.tencent.com/&#34;&gt;元器&lt;/a&gt; website!&lt;/p&gt;</description>
+      <description></description>
     </item>
   </channel>
 </rss>
