@@ -2,11 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Essay on Quinn&#39;s Blog</title>
-    <link>https://quinnw7.github.io/blog/essay/</link>
+    <link>http://localhost:1313/blog/essay/</link>
     <description>Recent content in Essay on Quinn&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
-    <atom:link href="https://quinnw7.github.io/blog/essay/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 May 2025 17:04:33 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/essay/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[教练]复盘日记1</title>
+      <link>http://localhost:1313/blog/essay/life_coach/%E6%95%99%E7%BB%83%E5%A4%8D%E7%9B%98%E6%97%A5%E8%AE%B01/</link>
+      <pubDate>Sat, 24 May 2025 17:04:33 +0800</pubDate>
+      <guid>http://localhost:1313/blog/essay/life_coach/%E6%95%99%E7%BB%83%E5%A4%8D%E7%9B%98%E6%97%A5%E8%AE%B01/</guid>
+      <description>&lt;p&gt;第一次车轮战，被教练话题：&lt;strong&gt;找到理想职业&lt;/strong&gt;，4号，20分钟就结束了，流程走完了，但没什么深度&#xA;点评 ：邓为教练&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
