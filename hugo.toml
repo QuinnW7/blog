@@ -7,7 +7,7 @@ publishDir = "docs"  # 将生成的文件输出到 docs/ 目录
 [params]
 recent_posts_number = 5  # 首页显示的最新文章数量
 body_classes = "garamond bg-near-white"
-mainSections = ["tech", "read"]
+mainSections = ["tech", "read","essay"]
 
 [[menu.main]]
 name = "Home"
