@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>登录系统 | Quinn&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="登录系统主要包含账户体系和鉴权体系，本文介绍了常见鉴权方式及账户管理相关">
+    <meta name="generator" content="Hugo 0.147.3">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/blog/ananke/css/main.min.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/blog/tech/003-%E7%99%BB%E5%BD%95/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/blog/tech/003-%E7%99%BB%E5%BD%95/">
+  <meta property="og:site_name" content="Quinn&#39;s Blog">
+  <meta property="og:title" content="登录系统">
+  <meta property="og:description" content="登录系统主要包含账户体系和鉴权体系，本文介绍了常见鉴权方式及账户管理相关">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2025-05-22T17:12:33+08:00">
+    <meta property="article:modified_time" content="2025-05-22T17:12:33+08:00">
+
+  <meta itemprop="name" content="登录系统">
+  <meta itemprop="description" content="登录系统主要包含账户体系和鉴权体系，本文介绍了常见鉴权方式及账户管理相关">
+  <meta itemprop="datePublished" content="2025-05-22T17:12:33+08:00">
+  <meta itemprop="dateModified" content="2025-05-22T17:12:33+08:00">
+  <meta itemprop="wordCount" content="35">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="登录系统">
+  <meta name="twitter:description" content="登录系统主要包含账户体系和鉴权体系，本文介绍了常见鉴权方式及账户管理相关">
+
+	
+  </head><body class="ma0 garamond bg-near-white development">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/blog/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Quinn&#39;s Blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/tech" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/read" title="Read page">
+              Read
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/essay" title="Essay page">
+              Essay
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Tech
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">登录系统</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-05-22T17:12:33+08:00">May 22, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>登录系统主要包含账户体系和鉴权体系，本文介绍了常见鉴权方式及账户管理相关</p>
+<h1 id="挑战">挑战</h1>
+<h1 id="ioa">IOA</h1>
+<h1 id="鉴权">鉴权</h1>
+<h1 id="账户">账户</h1>
+<ul>
+<li>登录系统
+<ul>
+<li>鉴权
+<ul>
+<li>外网
+<ul>
+<li>登录接口不鉴权</li>
+<li>其他接口使用类<a href="https://cloud.tencent.com/document/product/239/30598">腾讯云V3方式</a>签名验签方式鉴权TC3-HMAC-SHA256，用AKSK</li>
+</ul>
+</li>
+<li>内网
+<ul>
+<li>woa太湖统一鉴权
+<ul>
+<li>头中有StaffName</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>业界
+<ul>
+<li>Outh2.0
+<ul>
+<li>用AKSK换取accesstoken，然后后续接口都用<a href="https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html">accesstoken</a>去调用接口</li>
+</ul>
+</li>
+<li>Authorization http头</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>账户
+<ul>
+<li>手机号
+<ul>
+<li>验证码登录
+<ul>
+<li>收到验证码请求后，用手机号去redis存个随机数，然后校验</li>
+</ul>
+</li>
+<li>如果手机号在账户表里不存在的时候，直接插入数据注册</li>
+</ul>
+</li>
+<li>微信
+<ul>
+<li>扫码登录
+<ul>
+<li>用户扫码后，跳转到微信点击登录后，前端拿到用户的openid和appid后调用后端接口</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>QQ</li>
+</ul>
+</li>
+<li>其他
+<ul>
+<li>单点登录SSO
+<ul>
+<li>域名种cookie
+<ul>
+<li>有一个接口先去读cookie后，换取用户登录信息</li>
+</ul>
+</li>
+<li>登录态
+<ul>
+<li>uid</li>
+<li>platform</li>
+<li>timestamp</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">What&#39;s in this tech</p>
+      <nav id="TableOfContents"></nav>
+  </div>
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/blog/" >
+    &copy;  Quinn's Blog 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
