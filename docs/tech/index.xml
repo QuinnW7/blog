@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tech on Quinn&#39;s Blog</title>
-    <link>http://localhost:1313/blog/tech/</link>
+    <link>https://quinnw7.github.io/blog/tech/</link>
     <description>Recent content in Tech on Quinn&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 26 May 2025 14:42:33 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/tech/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://quinnw7.github.io/blog/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MCP工具适配</title>
-      <link>http://localhost:1313/blog/tech/work/007-mcp%E5%B7%A5%E5%85%B7%E9%80%82%E9%85%8D/</link>
+      <link>https://quinnw7.github.io/blog/tech/work/007-mcp%E5%B7%A5%E5%85%B7%E9%80%82%E9%85%8D/</link>
       <pubDate>Mon, 26 May 2025 14:42:33 +0800</pubDate>
-      <guid>http://localhost:1313/blog/tech/work/007-mcp%E5%B7%A5%E5%85%B7%E9%80%82%E9%85%8D/</guid>
-      <description>&lt;p&gt;写个python服务，然后打包镜像到pypi镜像源，然后mcp客户端配置下就可以直接使用&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;uv build&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;uv publish --token $pypi_token&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;工作内容：&lt;/p&gt;&#xA;&lt;p&gt;首先本次要搭建一个工具服务，将原有的bing搜索搬过来，然后再再这个服务上添加新的工具，然后再部署一个mcp server就可以了，估计后面要找xiaotong联调&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://hunyuantool.woa.com/#/business&#34;&gt;https://hunyuantool.woa.com/#/business&lt;/a&gt;&#xA;&lt;a href=&#34;https://pypi.org/project/hunyuan-plugin-mcp-bingsearch/&#34;&gt;https://pypi.org/project/hunyuan-plugin-mcp-bingsearch/&lt;/a&gt;&#xA;腾讯云镜像：https://mirrors.cloud.tencent.com/yun/pypi/simple/hunyuan-plugin-mcp-bingsearch/&#xA;阿里云镜像：https://mirrors.aliyun.com/pypi/simple/hunyuan-plugin-mcp-bingsearch/&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;当前对方还没有提供接口明细，先搞工具服务&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;先把git仓库弄下来，然后搭服务，只有一个接口的，感觉跟简单，半小时好吧,改完又因为网关流式不支持不用了&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;开始开发第一个工具:ai_search_quote&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;对接接口，然后测试下，大概25分钟吧，来个番茄钟&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -X POST -H &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Content-Type: application/json&amp;#34;&lt;/span&gt; -H &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Authorization:Bearer XXX&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://21.38.0.50:8000/openapi/betav1/tools/ai_search&amp;#34;&lt;/span&gt; -d &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{&amp;#34;query_list&amp;#34;:[&amp;#34;elon musk&amp;#34;, &amp;#34;alibaba china&amp;#34;, &amp;#34;trump&amp;#34;]}&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;mcp环境安装&#34;&gt;MCP环境安装&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://modelcontextprotocol.io/quickstart/server&#34;&gt;https://modelcontextprotocol.io/quickstart/server&lt;/a&gt;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;mcpServers&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hunyuanBingSearch&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;uvx&amp;#34;&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hunyuan-plugin-mcp-bingsearch&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;env&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;BING_API_KEY&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$BING_API_KEY&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;QUOTE_API_KEY&amp;#34;&lt;/span&gt;:&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$QUOTE_API_KEY&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;2025.06.04&lt;/code&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;先看下上次给的那个插件在正式环境好不好用&lt;/li&gt;&#xA;&lt;li&gt;今天要多写几个插件，明晚联调&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;参考：&#xA;&lt;a href=&#34;https://blog.csdn.net/longyuhome/article/details/147623851&#34;&gt;https://blog.csdn.net/longyuhome/article/details/147623851&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;下载了  cursor / cherry Studio 都可以用mcp测试，但都有缓存&lt;/p&gt;</description>
+      <guid>https://quinnw7.github.io/blog/tech/work/007-mcp%E5%B7%A5%E5%85%B7%E9%80%82%E9%85%8D/</guid>
+      <description>&lt;p&gt;写个python服务对接底层接口，然后打包镜像到pypi镜像源，然后mcp客户端配置下就可以直接使用&#xA;其中有两个函数要实现：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;tool list&lt;/li&gt;&#xA;&lt;li&gt;tool call&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title> 微信 iOS 小程序开发方案</title>
-      <link>http://localhost:1313/blog/tech/work/006-ios%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</link>
+      <link>https://quinnw7.github.io/blog/tech/work/006-ios%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</link>
       <pubDate>Mon, 26 May 2025 08:42:33 +0800</pubDate>
-      <guid>http://localhost:1313/blog/tech/work/006-ios%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</guid>
+      <guid>https://quinnw7.github.io/blog/tech/work/006-ios%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</guid>
       <description></description>
     </item>
     <item>
       <title>多智能体调研</title>
-      <link>http://localhost:1313/blog/tech/work/005-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93/</link>
+      <link>https://quinnw7.github.io/blog/tech/work/005-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93/</link>
       <pubDate>Fri, 23 May 2025 13:42:33 +0800</pubDate>
-      <guid>http://localhost:1313/blog/tech/work/005-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93/</guid>
+      <guid>https://quinnw7.github.io/blog/tech/work/005-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93/</guid>
       <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;&#xA;&lt;p&gt;基于单智能体基础上，扩展&lt;/p&gt;</description>
     </item>
     <item>
       <title>登录系统</title>
-      <link>http://localhost:1313/blog/tech/work/003-%E7%99%BB%E5%BD%95/</link>
+      <link>https://quinnw7.github.io/blog/tech/work/003-%E7%99%BB%E5%BD%95/</link>
       <pubDate>Thu, 22 May 2025 17:12:33 +0800</pubDate>
-      <guid>http://localhost:1313/blog/tech/work/003-%E7%99%BB%E5%BD%95/</guid>
+      <guid>https://quinnw7.github.io/blog/tech/work/003-%E7%99%BB%E5%BD%95/</guid>
       <description></description>
     </item>
     <item>
       <title>智能体中台</title>
-      <link>http://localhost:1313/blog/tech/work/001-%E6%99%BA%E8%83%BD%E4%BD%93%E4%B8%AD%E5%8F%B0/</link>
+      <link>https://quinnw7.github.io/blog/tech/work/001-%E6%99%BA%E8%83%BD%E4%BD%93%E4%B8%AD%E5%8F%B0/</link>
       <pubDate>Thu, 22 May 2025 10:42:33 +0800</pubDate>
-      <guid>http://localhost:1313/blog/tech/work/001-%E6%99%BA%E8%83%BD%E4%BD%93%E4%B8%AD%E5%8F%B0/</guid>
+      <guid>https://quinnw7.github.io/blog/tech/work/001-%E6%99%BA%E8%83%BD%E4%BD%93%E4%B8%AD%E5%8F%B0/</guid>
       <description></description>
     </item>
     <item>
       <title>监控优化查询</title>
-      <link>http://localhost:1313/blog/tech/work/004-%E7%9B%91%E6%8E%A7%E4%BC%98%E5%8C%96%E6%9F%A5%E8%AF%A2/</link>
+      <link>https://quinnw7.github.io/blog/tech/work/004-%E7%9B%91%E6%8E%A7%E4%BC%98%E5%8C%96%E6%9F%A5%E8%AF%A2/</link>
       <pubDate>Thu, 22 May 2025 10:42:33 +0800</pubDate>
-      <guid>http://localhost:1313/blog/tech/work/004-%E7%9B%91%E6%8E%A7%E4%BC%98%E5%8C%96%E6%9F%A5%E8%AF%A2/</guid>
+      <guid>https://quinnw7.github.io/blog/tech/work/004-%E7%9B%91%E6%8E%A7%E4%BC%98%E5%8C%96%E6%9F%A5%E8%AF%A2/</guid>
       <description>&lt;p&gt;挑战是微信全景监控，功能分为：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;数据上报：峰值7亿/min&lt;/li&gt;&#xA;&lt;li&gt;数据查询：80w/min，平均响应时间较长：1000ms~2000ms&#xA;&lt;ul&gt;&#xA;&lt;li&gt;接口：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;维度枚举查询&lt;/li&gt;&#xA;&lt;li&gt;时间序列查询&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>智能体创作平台</title>
-      <link>http://localhost:1313/blog/tech/work/002-%E6%99%BA%E8%83%BD%E4%BD%93%E5%88%9B%E4%BD%9C%E5%B9%B3%E5%8F%B0/</link>
+      <link>https://quinnw7.github.io/blog/tech/work/002-%E6%99%BA%E8%83%BD%E4%BD%93%E5%88%9B%E4%BD%9C%E5%B9%B3%E5%8F%B0/</link>
       <pubDate>Thu, 22 May 2025 10:12:33 +0800</pubDate>
-      <guid>http://localhost:1313/blog/tech/work/002-%E6%99%BA%E8%83%BD%E4%BD%93%E5%88%9B%E4%BD%9C%E5%B9%B3%E5%8F%B0/</guid>
+      <guid>https://quinnw7.github.io/blog/tech/work/002-%E6%99%BA%E8%83%BD%E4%BD%93%E5%88%9B%E4%BD%9C%E5%B9%B3%E5%8F%B0/</guid>
       <description></description>
     </item>
   </channel>
