@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>MCP工具适配 | Quinn&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="写个python服务对接底层接口，然后打包镜像到pypi镜像源，然后mcp客户端配置下就可以直接使用
+其中有两个函数要实现：
+
+tool list
+tool call
+">
+    <meta name="generator" content="Hugo 0.147.3">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/blog/ananke/css/main.min.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/blog/tech/work/007-mcp%E5%B7%A5%E5%85%B7%E9%80%82%E9%85%8D/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/blog/tech/work/007-mcp%E5%B7%A5%E5%85%B7%E9%80%82%E9%85%8D/">
+  <meta property="og:site_name" content="Quinn&#39;s Blog">
+  <meta property="og:title" content="MCP工具适配">
+  <meta property="og:description" content="写个python服务对接底层接口，然后打包镜像到pypi镜像源，然后mcp客户端配置下就可以直接使用 其中有两个函数要实现：
+tool list tool call">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2025-05-26T14:42:33+08:00">
+    <meta property="article:modified_time" content="2025-05-26T14:42:33+08:00">
+
+  <meta itemprop="name" content="MCP工具适配">
+  <meta itemprop="description" content="写个python服务对接底层接口，然后打包镜像到pypi镜像源，然后mcp客户端配置下就可以直接使用 其中有两个函数要实现：
+tool list tool call">
+  <meta itemprop="datePublished" content="2025-05-26T14:42:33+08:00">
+  <meta itemprop="dateModified" content="2025-05-26T14:42:33+08:00">
+  <meta itemprop="wordCount" content="163">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="MCP工具适配">
+  <meta name="twitter:description" content="写个python服务对接底层接口，然后打包镜像到pypi镜像源，然后mcp客户端配置下就可以直接使用 其中有两个函数要实现：
+tool list tool call">
+
+	
+  </head><body class="ma0 garamond bg-near-white development">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/blog/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Quinn&#39;s Blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/tech" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/read" title="Read page">
+              Read
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/essay" title="Essay page">
+              Essay
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Tech
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">MCP工具适配</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-05-26T14:42:33+08:00">May 26, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>写个python服务对接底层接口，然后打包镜像到pypi镜像源，然后mcp客户端配置下就可以直接使用
+其中有两个函数要实现：</p>
+<ul>
+<li>tool list</li>
+<li>tool call</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>uv build
+</span></span><span style="display:flex;"><span>uv publish --token $pypi_token
+</span></span></code></pre></div><p>工作内容：</p>
+<p>首先本次要搭建一个工具服务，将原有的bing搜索搬过来，然后再再这个服务上添加新的工具，然后再部署一个mcp server就可以了，估计后面要找xiaotong联调</p>
+<p><a href="https://hunyuantool.woa.com/#/business">https://hunyuantool.woa.com/#/business</a>
+<a href="https://pypi.org/project/hunyuan-plugin-mcp-bingsearch/">https://pypi.org/project/hunyuan-plugin-mcp-bingsearch/</a>
+腾讯云镜像：https://mirrors.cloud.tencent.com/yun/pypi/simple/hunyuan-plugin-mcp-bingsearch/
+阿里云镜像：https://mirrors.aliyun.com/pypi/simple/hunyuan-plugin-mcp-bingsearch/</p>
+<ul>
+<li>
+<p>当前对方还没有提供接口明细，先搞工具服务</p>
+</li>
+<li>
+<p>先把git仓库弄下来，然后搭服务，只有一个接口的，感觉跟简单，半小时好吧,改完又因为网关流式不支持不用了</p>
+</li>
+<li>
+<p>开始开发第一个工具:ai_search_quote</p>
+<ul>
+<li>对接接口，然后测试下，大概25分钟吧，来个番茄钟</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -X POST -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -H <span style="color:#e6db74">&#34;Authorization:Bearer XXX&#34;</span>  <span style="color:#e6db74">&#34;http://21.38.0.50:8000/openapi/betav1/tools/ai_search&#34;</span> -d <span style="color:#e6db74">&#39;{&#34;query_list&#34;:[&#34;elon musk&#34;, &#34;alibaba china&#34;, &#34;trump&#34;]}&#39;</span>
+</span></span></code></pre></div></li>
+</ul>
+<h1 id="mcp环境安装">MCP环境安装</h1>
+<p><a href="https://modelcontextprotocol.io/quickstart/server">https://modelcontextprotocol.io/quickstart/server</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;mcpServers&#34;</span>: <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;hunyuanBingSearch&#34;</span>: <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;uvx&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;args&#34;</span>: <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;hunyuan-plugin-mcp-bingsearch&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">]</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;env&#34;</span>: <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;BING_API_KEY&#34;</span>: <span style="color:#e6db74">&#34;</span>$BING_API_KEY<span style="color:#e6db74">&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;QUOTE_API_KEY&#34;</span>:<span style="color:#e6db74">&#34;</span>$QUOTE_API_KEY<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p><code>2025.06.04</code></p>
+<ul>
+<li>先看下上次给的那个插件在正式环境好不好用</li>
+<li>今天要多写几个插件，明晚联调</li>
+</ul>
+<p>参考：
+<a href="https://blog.csdn.net/longyuhome/article/details/147623851">https://blog.csdn.net/longyuhome/article/details/147623851</a></p>
+<p>下载了  cursor / cherry Studio 都可以用mcp测试，但都有缓存</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>time curl -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -d <span style="color:#e6db74">&#39;{&#34;bid&#34;: &#34;hy_mcp_fit_recall&#34;, &#34;server&#34;: &#34;fit_recall&#34;, &#34;services&#34;: [], &#34;bid_2&#34;: &#34;B端&#34;, &#34;bid_3&#34;: &#34;产品A&#34;, &#34;request_id&#34;: &#34;590e734d6f1040c8863d9858915b92d51&#34;, &#34;query&#34;: &#34;腾讯投资&#34;, &#34;question&#34;: &#34;腾讯值得投资吗&#34;, &#34;data_type&#34;: &#34;all&#34;, &#34;se_params&#34;: {}, &#34;extra_params&#34;: {}, &#34;quota&#34;: {&#34;method&#34;: &#34;hy_mcp_fit_recall&#34;}}&#39;</span> http://11.153.228.191:8009
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>time curl -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -d <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;bid&#34;: &#34;hy_mcp_plugin_exchange_rate&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;server&#34;: &#34;plugin_exchange_rate&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;services&#34;: [],
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;bid_2&#34;: &#34;B端&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;bid_3&#34;: &#34;产品A&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;request_id&#34;: &#34;590e734d6f1040c8863d9858915b92d51&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;from&#34;: &#34;USD&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;to&#34;: &#34;CNY&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;money&#34;: &#34;100&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;quota&#34;: {&#34;method&#34;: &#34;hy_mcp_plugin_exchange_rate&#34;}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span> http://11.153.228.191:8009
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -d <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;bid&#34;: &#34;hy_mcp_plugin_stock&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;server&#34;: &#34;plugin_stock&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;services&#34;: [],
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;bid_2&#34;: &#34;B端&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;bid_3&#34;: &#34;产品A&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;request_id&#34;: &#34;590e734d6f1040c8863d9858915b92d51&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;query&#34;: &#34;腾讯今天股价&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;inner&#34;: 0,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;quota&#34;: {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;method&#34;: &#34;hy_mcp_plugin_stock&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span> http://11.153.228.191:8009
+</span></span></code></pre></div><ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/blog/" >
+    &copy;  Quinn's Blog 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

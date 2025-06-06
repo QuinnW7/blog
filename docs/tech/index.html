@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
+  <head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
@@ -11,12 +11,12 @@
     
     
     
-      <meta name="robots" content="index, follow">
+      <meta name="robots" content="noindex, nofollow">
     
     
 
     
-<link rel="stylesheet" href="/blog/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+<link rel="stylesheet" href="/blog/ananke/css/main.min.css" >
 
 
 
@@ -37,10 +37,10 @@
     
 
     
-      <link rel="canonical" href="https://quinnw7.github.io/blog/tech/">
+      <link rel="canonical" href="http://localhost:1313/blog/tech/">
     
 
-    <meta property="og:url" content="https://quinnw7.github.io/blog/tech/">
+    <meta property="og:url" content="http://localhost:1313/blog/tech/">
   <meta property="og:site_name" content="Quinn&#39;s Blog">
   <meta property="og:title" content="Tech">
   <meta property="og:description" content="Technical articles, tutorials and best practices">
@@ -55,16 +55,14 @@
   <meta name="twitter:title" content="Tech">
   <meta name="twitter:description" content="Technical articles, tutorials and best practices">
 
-      
-    
 	
-  </head><body class="ma0 garamond bg-near-white production">
+  </head><body class="ma0 garamond bg-near-white development">
 
     
 
   
   
-  <header class="cover bg-top" style="background-image: url('https://quinnw7.github.io/blog/images/gohugo-default-sample-hero-image.jpg');">
+  <header class="cover bg-top" style="background-image: url('http://localhost:1313/blog/images/gohugo-default-sample-hero-image.jpg');">
     
     <div class="bg-black-60">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
@@ -131,6 +129,72 @@
   <article class="pa3 pa4-ns nested-copy-line-height">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray"></section>
     <section class="flex-ns mt5 flex-wrap justify-around">
+      
+        <div class="w-100 w-30-l mb4 relative bg-white">
+          <div class="w-100 mb4 nested-copy-line-height relative bg-white">
+  <div class="mb3 pa4 gray overflow-hidden bg-white">
+    <span class="f6 db">Tech</span>
+    <h1 class="f3 near-black">
+      <a href="/blog/tech/work/007-mcp%E5%B7%A5%E5%85%B7%E9%80%82%E9%85%8D/" class="link black dim">
+        MCP工具适配
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>写个python服务，然后打包镜像到pypi镜像源，然后mcp客户端配置下就可以直接使用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>uv build
+</span></span><span style="display:flex;"><span>uv publish --token $pypi_token
+</span></span></code></pre></div><p>工作内容：</p>
+<p>首先本次要搭建一个工具服务，将原有的bing搜索搬过来，然后再再这个服务上添加新的工具，然后再部署一个mcp server就可以了，估计后面要找xiaotong联调</p>
+<p><a href="https://hunyuantool.woa.com/#/business">https://hunyuantool.woa.com/#/business</a>
+<a href="https://pypi.org/project/hunyuan-plugin-mcp-bingsearch/">https://pypi.org/project/hunyuan-plugin-mcp-bingsearch/</a>
+腾讯云镜像：https://mirrors.cloud.tencent.com/yun/pypi/simple/hunyuan-plugin-mcp-bingsearch/
+阿里云镜像：https://mirrors.aliyun.com/pypi/simple/hunyuan-plugin-mcp-bingsearch/</p>
+<ul>
+<li>
+<p>当前对方还没有提供接口明细，先搞工具服务</p>
+</li>
+<li>
+<p>先把git仓库弄下来，然后搭服务，只有一个接口的，感觉跟简单，半小时好吧,改完又因为网关流式不支持不用了</p>
+</li>
+<li>
+<p>开始开发第一个工具:ai_search_quote</p>
+<ul>
+<li>对接接口，然后测试下，大概25分钟吧，来个番茄钟</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>curl -X POST -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span> -H <span style="color:#e6db74">&#34;Authorization:Bearer XXX&#34;</span>  <span style="color:#e6db74">&#34;http://21.38.0.50:8000/openapi/betav1/tools/ai_search&#34;</span> -d <span style="color:#e6db74">&#39;{&#34;query_list&#34;:[&#34;elon musk&#34;, &#34;alibaba china&#34;, &#34;trump&#34;]}&#39;</span>
+</span></span></code></pre></div></li>
+</ul>
+<h1 id="mcp环境安装">MCP环境安装</h1>
+<p><a href="https://modelcontextprotocol.io/quickstart/server">https://modelcontextprotocol.io/quickstart/server</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;mcpServers&#34;</span>: <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;hunyuanBingSearch&#34;</span>: <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;uvx&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;args&#34;</span>: <span style="color:#f92672">[</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;hunyuan-plugin-mcp-bingsearch&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">]</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;env&#34;</span>: <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;BING_API_KEY&#34;</span>: <span style="color:#e6db74">&#34;</span>$BING_API_KEY<span style="color:#e6db74">&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;QUOTE_API_KEY&#34;</span>:<span style="color:#e6db74">&#34;</span>$QUOTE_API_KEY<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><p><code>2025.06.04</code></p>
+<ul>
+<li>先看下上次给的那个插件在正式环境好不好用</li>
+<li>今天要多写几个插件，明晚联调</li>
+</ul>
+<p>参考：
+<a href="https://blog.csdn.net/longyuhome/article/details/147623851">https://blog.csdn.net/longyuhome/article/details/147623851</a></p>
+<p>下载了  cursor / cherry Studio 都可以用mcp测试，但都有缓存</p>
+    </div>
+    <a href="/blog/tech/work/007-mcp%E5%B7%A5%E5%85%B7%E9%80%82%E9%85%8D/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
       
         <div class="w-100 w-30-l mb4 relative bg-white">
           <div class="w-100 mb4 nested-copy-line-height relative bg-white">
@@ -259,7 +323,7 @@
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://quinnw7.github.io/blog/" >
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/blog/" >
     &copy;  Quinn's Blog 2025 
   </a>
     <div><div class="ananke-socials"></div>
