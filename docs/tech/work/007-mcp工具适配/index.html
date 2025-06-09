@@ -56,7 +56,7 @@ tool list tool call">
 tool list tool call">
   <meta itemprop="datePublished" content="2025-05-26T14:42:33+08:00">
   <meta itemprop="dateModified" content="2025-05-26T14:42:33+08:00">
-  <meta itemprop="wordCount" content="163">
+  <meta itemprop="wordCount" content="166">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="MCP工具适配">
   <meta name="twitter:description" content="写个python服务对接底层接口，然后打包镜像到pypi镜像源，然后mcp客户端配置下就可以直接使用 其中有两个函数要实现：
@@ -153,10 +153,10 @@ tool list tool call">
 </span></span><span style="display:flex;"><span>uv publish --token $pypi_token
 </span></span></code></pre></div><p>工作内容：</p>
 <p>首先本次要搭建一个工具服务，将原有的bing搜索搬过来，然后再再这个服务上添加新的工具，然后再部署一个mcp server就可以了，估计后面要找xiaotong联调</p>
-<p><a href="https://hunyuantool.woa.com/#/business">https://hunyuantool.woa.com/#/business</a>
-<a href="https://pypi.org/project/hunyuan-plugin-mcp-bingsearch/">https://pypi.org/project/hunyuan-plugin-mcp-bingsearch/</a>
-腾讯云镜像：https://mirrors.cloud.tencent.com/yun/pypi/simple/hunyuan-plugin-mcp-bingsearch/
-阿里云镜像：https://mirrors.aliyun.com/pypi/simple/hunyuan-plugin-mcp-bingsearch/</p>
+<p><a href="https://hunyuantool.woa.com/#/business">https://hunyuantool.woa.com/#/business</a></p>
+<p><a href="https://pypi.org/project/hunyuan-plugin-mcp-bingsearch/">https://pypi.org/project/hunyuan-plugin-mcp-bingsearch/</a></p>
+<p>腾讯云镜像：https://mirrors.cloud.tencent.com/yun/pypi/simple/hunyuan-plugin-mcp-bingsearch/</p>
+<p>阿里云镜像：https://mirrors.aliyun.com/pypi/simple/hunyuan-plugin-mcp-bingsearch/</p>
 <ul>
 <li>
 <p>当前对方还没有提供接口明细，先搞工具服务</p>
@@ -223,7 +223,8 @@ tool list tool call">
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;method&#34;: &#34;hy_mcp_plugin_stock&#34;
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  }
 </span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span> http://11.153.228.191:8009
-</span></span></code></pre></div><ul class="pa0">
+</span></span></code></pre></div><h2 id="发布">发布</h2>
+<p>需要添加新的环境变量，区分环境 prod/pre/test</p><ul class="pa0">
   
 </ul>
 <div class="mt6 instapaper_ignoref">

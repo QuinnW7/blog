@@ -6,8 +6,27 @@
     
     <title>多智能体调研 | Quinn&#39;s Blog</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="背景
-基于单智能体基础上，扩展">
+    <meta name="description" content="大纲：
+引言：
+
+未来世界长什么样？
+
+引出AGI
+
+引出MAS
+
+
+提一嘴单智能体，然后介绍MAS的关键实现技术
+
+
+
+背景
+基于单智能体基础上，扩展
+目标
+AGI 的全称是 Artificial General Intelligence（通用人工智能），指的是一种理论上具备人类水平理解和学习能力的智能体，能够在任何认知任务中像人类一样思考、学习和解决问题（甚至超越人类）
+多智能体系统（MAS）是AGI的必经之路： 当前通过多个专用Agent协作，逐步逼近复杂任务处理能力（如Manus AI调度数十个Agent完成全链工作流）。
+A2A 开源智能体通信协议
+https://developers.googleblog.com/zh-hans/a2a-a-new-era-of-agent-interoperability/">
     <meta name="generator" content="Hugo 0.147.3">
     
     
@@ -39,7 +58,12 @@
     <meta property="og:url" content="https://quinnw7.github.io/blog/tech/work/005-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93/">
   <meta property="og:site_name" content="Quinn&#39;s Blog">
   <meta property="og:title" content="多智能体调研">
-  <meta property="og:description" content="背景 基于单智能体基础上，扩展">
+  <meta property="og:description" content="大纲：
+引言：
+未来世界长什么样？ 引出AGI 引出MAS 提一嘴单智能体，然后介绍MAS的关键实现技术 背景 基于单智能体基础上，扩展
+目标 AGI 的全称是 Artificial General Intelligence（通用人工智能），指的是一种理论上具备人类水平理解和学习能力的智能体，能够在任何认知任务中像人类一样思考、学习和解决问题（甚至超越人类）
+多智能体系统（MAS）是AGI的必经之路： 当前通过多个专用Agent协作，逐步逼近复杂任务处理能力（如Manus AI调度数十个Agent完成全链工作流）。
+A2A 开源智能体通信协议 https://developers.googleblog.com/zh-hans/a2a-a-new-era-of-agent-interoperability/">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="tech">
@@ -47,13 +71,23 @@
     <meta property="article:modified_time" content="2025-05-23T13:42:33+08:00">
 
   <meta itemprop="name" content="多智能体调研">
-  <meta itemprop="description" content="背景 基于单智能体基础上，扩展">
+  <meta itemprop="description" content="大纲：
+引言：
+未来世界长什么样？ 引出AGI 引出MAS 提一嘴单智能体，然后介绍MAS的关键实现技术 背景 基于单智能体基础上，扩展
+目标 AGI 的全称是 Artificial General Intelligence（通用人工智能），指的是一种理论上具备人类水平理解和学习能力的智能体，能够在任何认知任务中像人类一样思考、学习和解决问题（甚至超越人类）
+多智能体系统（MAS）是AGI的必经之路： 当前通过多个专用Agent协作，逐步逼近复杂任务处理能力（如Manus AI调度数十个Agent完成全链工作流）。
+A2A 开源智能体通信协议 https://developers.googleblog.com/zh-hans/a2a-a-new-era-of-agent-interoperability/">
   <meta itemprop="datePublished" content="2025-05-23T13:42:33+08:00">
   <meta itemprop="dateModified" content="2025-05-23T13:42:33+08:00">
-  <meta itemprop="wordCount" content="2">
+  <meta itemprop="wordCount" content="20">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="多智能体调研">
-  <meta name="twitter:description" content="背景 基于单智能体基础上，扩展">
+  <meta name="twitter:description" content="大纲：
+引言：
+未来世界长什么样？ 引出AGI 引出MAS 提一嘴单智能体，然后介绍MAS的关键实现技术 背景 基于单智能体基础上，扩展
+目标 AGI 的全称是 Artificial General Intelligence（通用人工智能），指的是一种理论上具备人类水平理解和学习能力的智能体，能够在任何认知任务中像人类一样思考、学习和解决问题（甚至超越人类）
+多智能体系统（MAS）是AGI的必经之路： 当前通过多个专用Agent协作，逐步逼近复杂任务处理能力（如Manus AI调度数十个Agent完成全链工作流）。
+A2A 开源智能体通信协议 https://developers.googleblog.com/zh-hans/a2a-a-new-era-of-agent-interoperability/">
 
       
     
@@ -136,8 +170,27 @@
       
       
     </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="背景">背景</h1>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>大纲：</p>
+<p>引言：</p>
+<ul>
+<li>未来世界长什么样？
+<ul>
+<li>引出AGI
+<ul>
+<li>引出MAS</li>
+</ul>
+</li>
+<li>提一嘴单智能体，然后介绍MAS的关键实现技术</li>
+</ul>
+</li>
+</ul>
+<h1 id="背景">背景</h1>
 <p>基于单智能体基础上，扩展</p>
+<h1 id="目标">目标</h1>
+<p>AGI 的全称是 Artificial General Intelligence（通用人工智能），指的是一种理论上具备人类水平理解和学习能力的智能体，能够在任何认知任务中像人类一样思考、学习和解决问题（甚至超越人类）</p>
+<p>多智能体系统（MAS）是AGI的必经之路： 当前通过多个专用Agent协作，逐步逼近复杂任务处理能力（如Manus AI调度数十个Agent完成全链工作流）。</p>
+<p>A2A 开源智能体通信协议
+<a href="https://developers.googleblog.com/zh-hans/a2a-a-new-era-of-agent-interoperability/">https://developers.googleblog.com/zh-hans/a2a-a-new-era-of-agent-interoperability/</a></p>
 <ul class="pa0">
   
 </ul>

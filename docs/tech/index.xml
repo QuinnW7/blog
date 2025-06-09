@@ -27,7 +27,7 @@
       <link>https://quinnw7.github.io/blog/tech/work/005-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93/</link>
       <pubDate>Fri, 23 May 2025 13:42:33 +0800</pubDate>
       <guid>https://quinnw7.github.io/blog/tech/work/005-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93/</guid>
-      <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;&#xA;&lt;p&gt;基于单智能体基础上，扩展&lt;/p&gt;</description>
+      <description>&lt;p&gt;大纲：&lt;/p&gt;&#xA;&lt;p&gt;引言：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;未来世界长什么样？&#xA;&lt;ul&gt;&#xA;&lt;li&gt;引出AGI&#xA;&lt;ul&gt;&#xA;&lt;li&gt;引出MAS&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;提一嘴单智能体，然后介绍MAS的关键实现技术&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;&#xA;&lt;p&gt;基于单智能体基础上，扩展&lt;/p&gt;&#xA;&lt;h1 id=&#34;目标&#34;&gt;目标&lt;/h1&gt;&#xA;&lt;p&gt;AGI 的全称是 Artificial General Intelligence（通用人工智能），指的是一种理论上具备人类水平理解和学习能力的智能体，能够在任何认知任务中像人类一样思考、学习和解决问题（甚至超越人类）&lt;/p&gt;&#xA;&lt;p&gt;多智能体系统（MAS）是AGI的必经之路： 当前通过多个专用Agent协作，逐步逼近复杂任务处理能力（如Manus AI调度数十个Agent完成全链工作流）。&lt;/p&gt;&#xA;&lt;p&gt;A2A 开源智能体通信协议&#xA;&lt;a href=&#34;https://developers.googleblog.com/zh-hans/a2a-a-new-era-of-agent-interoperability/&#34;&gt;https://developers.googleblog.com/zh-hans/a2a-a-new-era-of-agent-interoperability/&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>登录系统</title>

@@ -6,8 +6,15 @@
     <description>Recent content in Welcome to Quinn&#39;s Blog on Quinn&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 May 2025 13:00:33 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Jun 2025 14:42:33 +0800</lastBuildDate>
     <atom:link href="https://quinnw7.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2025.06.09(Mon.)</title>
+      <link>https://quinnw7.github.io/blog/essay/diary/2025.06.09/</link>
+      <pubDate>Mon, 09 Jun 2025 14:42:33 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/essay/diary/2025.06.09/</guid>
+      <description>&lt;p&gt;反思：&lt;/p&gt;</description>
+    </item>
     <item>
       <title>[教练]被教练1</title>
       <link>https://quinnw7.github.io/blog/essay/life_coach/%E8%A2%AB%E6%95%99%E7%BB%831/</link>
@@ -41,7 +48,7 @@
       <link>https://quinnw7.github.io/blog/tech/work/005-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93/</link>
       <pubDate>Fri, 23 May 2025 13:42:33 +0800</pubDate>
       <guid>https://quinnw7.github.io/blog/tech/work/005-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93/</guid>
-      <description>&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;&#xA;&lt;p&gt;基于单智能体基础上，扩展&lt;/p&gt;</description>
+      <description>&lt;p&gt;大纲：&lt;/p&gt;&#xA;&lt;p&gt;引言：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;未来世界长什么样？&#xA;&lt;ul&gt;&#xA;&lt;li&gt;引出AGI&#xA;&lt;ul&gt;&#xA;&lt;li&gt;引出MAS&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;提一嘴单智能体，然后介绍MAS的关键实现技术&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;&#xA;&lt;p&gt;基于单智能体基础上，扩展&lt;/p&gt;&#xA;&lt;h1 id=&#34;目标&#34;&gt;目标&lt;/h1&gt;&#xA;&lt;p&gt;AGI 的全称是 Artificial General Intelligence（通用人工智能），指的是一种理论上具备人类水平理解和学习能力的智能体，能够在任何认知任务中像人类一样思考、学习和解决问题（甚至超越人类）&lt;/p&gt;&#xA;&lt;p&gt;多智能体系统（MAS）是AGI的必经之路： 当前通过多个专用Agent协作，逐步逼近复杂任务处理能力（如Manus AI调度数十个Agent完成全链工作流）。&lt;/p&gt;&#xA;&lt;p&gt;A2A 开源智能体通信协议&#xA;&lt;a href=&#34;https://developers.googleblog.com/zh-hans/a2a-a-new-era-of-agent-interoperability/&#34;&gt;https://developers.googleblog.com/zh-hans/a2a-a-new-era-of-agent-interoperability/&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>原则</title>
@@ -58,11 +65,25 @@
       <description></description>
     </item>
     <item>
+      <title>stock</title>
+      <link>https://quinnw7.github.io/blog/essay/stock/8%E5%80%8D/</link>
+      <pubDate>Thu, 22 May 2025 10:42:33 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/essay/stock/8%E5%80%8D/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>智能体中台</title>
       <link>https://quinnw7.github.io/blog/tech/work/001-%E6%99%BA%E8%83%BD%E4%BD%93%E4%B8%AD%E5%8F%B0/</link>
       <pubDate>Thu, 22 May 2025 10:42:33 +0800</pubDate>
       <guid>https://quinnw7.github.io/blog/tech/work/001-%E6%99%BA%E8%83%BD%E4%BD%93%E4%B8%AD%E5%8F%B0/</guid>
       <description></description>
+    </item>
+    <item>
+      <title>理财agent</title>
+      <link>https://quinnw7.github.io/blog/essay/stock/%E7%90%86%E8%B4%A2agent/</link>
+      <pubDate>Thu, 22 May 2025 10:42:33 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/essay/stock/%E7%90%86%E8%B4%A2agent/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://km.woa.com/articles/show/630755?kmref=vkm_push&#34;&gt;https://km.woa.com/articles/show/630755?kmref=vkm_push&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>监控优化查询</title>
