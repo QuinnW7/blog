@@ -17,12 +17,6 @@ Google AI Studio 是一个基于浏览器的免费在线工具，旨在帮助开
 
 # 用例图
 
-# 静态建模
-# 系统架构
-# 时序图
-# 状态机
-# 对外API
-
 ```mermaid
  graph TD
     A["开发者 / 用户"] --> B(("设计与测试提示"))
@@ -43,5 +37,149 @@ Google AI Studio 是一个基于浏览器的免费在线工具，旨在帮助开
         D --> D2["迁移到Vertex AI"]
     end
 ```
+# 静态建模
+```mermaid
+classDiagram
+    direction LR
+
+    class User {
+      +interactsWith(AIStudioUI)
+    }
+
+    class AIStudioUI {
+      -currentPrompt: Prompt
+      -apiKey: string
+      -apiClient: GenerativeAI_API_Client
+      -codeGenerator: CodeGenerator
+      +newPrompt(type: PromptType)
+      +runPrompt()
+      +displayResponse(response: ModelResponse)
+      +displayError(error: Error)
+      +generateCodeForPrompt(language: string)
+    }
+
+    class Prompt {
+      <<abstract>>
+      #id: string
+      #modelParameters: ModelParameters
+      +getFormattedContentForAPI(): object
+    }
+
+    class FreeformPrompt {
+      -parts: ContentPart[]
+      +addText(text: string)
+      +addImage(imageData: blob)
+      +getFormattedContentForAPI(): object
+    }
+
+    class StructuredPrompt {
+      -examples: Example[]
+      -finalInput: string
+      +addExample(input: string, output: string)
+      +setFinalInput(text: string)
+      +getFormattedContentForAPI(): object
+    }
+
+    class ChatPrompt {
+      -history: ChatMessage[]
+      +addMessage(role: string, text: string)
+      +getFormattedContentForAPI(): object
+    }
+
+    class ContentPart {
+      <<abstract>>
+    }
+    class TextPart { +text: string }
+    class ImagePart { +inlineData: object }
+
+    class Example {
+      +input: string
+      +output: string
+    }
+
+    class ChatMessage {
+      +role: string
+      +parts: ContentPart[]
+    }
+
+    class ModelParameters {
+      +temperature: float
+      +topK: int
+      +topP: float
+    }
+
+    class CodeGenerator {
+      +generate(prompt: Prompt, language: string): string
+    }
+
+    class GenerativeAI_API_Client {
+      -baseUrl: string
+      +generateContent(payload: object, apiKey: string): Promise<ModelResponse>
+    }
+
+    class ModelResponse {
+      +responseText: string
+      +finishReason: string
+      +error: object
+    }
+
+    User --> AIStudioUI
+
+    AIStudioUI o-- "1" Prompt : "manages"
+    AIStudioUI o-- "1" ModelParameters : "configures"
+    AIStudioUI ..> GenerativeAI_API_Client : "uses"
+    AIStudioUI ..> CodeGenerator : "uses"
+
+    Prompt <|-- FreeformPrompt
+    Prompt <|-- StructuredPrompt
+    Prompt <|-- ChatPrompt
+
+    Prompt o-- "1" ModelParameters
+
+    FreeformPrompt *-- "0..*" ContentPart
+    StructuredPrompt *-- "0..*" Example
+    ChatPrompt *-- "0..*" ChatMessage
+
+    ChatMessage o-- "1..*" ContentPart
+    ContentPart <|-- TextPart
+    ContentPart <|-- ImagePart
+
+```
+
+# 系统架构
+# 时序图
+# 状态机
+# 对外API
+AI Studio 本身不提供 API，但它使用的 Google Generative AI API (Gemini API) 是完全公开给开发者使用的。这正是 AI Studio "Get Code" 功能所生成代码的目标。
+- 核心 Endpoint: generateContent
+- HTTP Method: POST
+- URL: https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent
+{model}: 是一个占位符，例如 gemini-pro (文本) 或 gemini-pro-vision (文本和图片)。
+Authentication: 通过在请求头中加入 x-goog-api-key: YOUR_API_KEY 或使用 OAuth 实现。
+
+stateDiagram-v2
+[*] --> Drafting: 新建或打开提示
+
+    state Drafting {
+        description: 用户正在编辑提示、调整参数
+    }
+    state Running {
+        description: 请求已发送，等待后端响应
+    }
+    state DisplayingResult {
+        description: 成功获取并显示结果
+    }
+    state Error {
+        description: API调用失败或返回错误
+    }
+
+    Drafting --> Running: 用户点击 "Run"
+    Running --> DisplayingResult: API 返回成功 (200 OK)
+    Running --> Error: API 返回错误 (e.g., 4xx, 5xx)
+
+    DisplayingResult --> Drafting: 用户修改提示或参数
+    Error --> Drafting: 用户编辑提示以修复问题
+
+
 
 

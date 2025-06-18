@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
@@ -11,12 +11,12 @@
     
     
     
-      <meta name="robots" content="noindex, nofollow">
+      <meta name="robots" content="index, follow">
     
     
 
     
-<link rel="stylesheet" href="/blog/ananke/css/main.min.css" >
+<link rel="stylesheet" href="/blog/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
 
 
 
@@ -32,10 +32,10 @@
     
 
     
-      <link rel="canonical" href="http://localhost:1313/blog/tech/work/008-google-ai-studio/">
+      <link rel="canonical" href="https://quinnw7.github.io/blog/tech/work/008-google-ai-studio/">
     
 
-    <meta property="og:url" content="http://localhost:1313/blog/tech/work/008-google-ai-studio/">
+    <meta property="og:url" content="https://quinnw7.github.io/blog/tech/work/008-google-ai-studio/">
   <meta property="og:site_name" content="Quinn&#39;s Blog">
   <meta property="og:title" content="x">
   <meta property="og:description" content="https://aistudio.google.com/prompts/new_chat">
@@ -49,13 +49,15 @@
   <meta itemprop="description" content="https://aistudio.google.com/prompts/new_chat">
   <meta itemprop="datePublished" content="2025-06-18T14:50:33+08:00">
   <meta itemprop="dateModified" content="2025-06-18T14:50:33+08:00">
-  <meta itemprop="wordCount" content="106">
+  <meta itemprop="wordCount" content="414">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="x">
   <meta name="twitter:description" content="https://aistudio.google.com/prompts/new_chat">
 
+      
+    
 	
-  </head><body class="ma0 garamond bg-near-white development">
+  </head><body class="ma0 garamond bg-near-white production">
 
     
    
@@ -143,11 +145,6 @@
 <li>连接生产环境： AI Studio 不仅仅是一个玩具。当你在其中调试好一个满意的原型后，可以一键生成 Python、Node.js、Go 等多种语言的 API 调用代码，无缝地将原型集成到你的应用程序中。它也是通往更强大的企业级平台 Vertex AI 的桥梁。</li>
 </ul>
 <h1 id="用例图">用例图</h1>
-<h1 id="静态建模">静态建模</h1>
-<h1 id="系统架构">系统架构</h1>
-<h1 id="时序图">时序图</h1>
-<h1 id="状态机">状态机</h1>
-<h1 id="对外api">对外API</h1>
 <pre tabindex="0"><code class="language-mermaid" data-lang="mermaid"> graph TD
     A[&#34;开发者 / 用户&#34;] --&gt; B((&#34;设计与测试提示&#34;))
     A --&gt; C((&#34;管理API密钥&#34;))
@@ -166,6 +163,144 @@
         D --&gt; D1[&#34;一键生成API代码&#34;]
         D --&gt; D2[&#34;迁移到Vertex AI&#34;]
     end
+</code></pre><h1 id="静态建模">静态建模</h1>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">classDiagram
+    direction LR
+
+    class User {
+      +interactsWith(AIStudioUI)
+    }
+
+    class AIStudioUI {
+      -currentPrompt: Prompt
+      -apiKey: string
+      -apiClient: GenerativeAI_API_Client
+      -codeGenerator: CodeGenerator
+      +newPrompt(type: PromptType)
+      +runPrompt()
+      +displayResponse(response: ModelResponse)
+      +displayError(error: Error)
+      +generateCodeForPrompt(language: string)
+    }
+
+    class Prompt {
+      &lt;&lt;abstract&gt;&gt;
+      #id: string
+      #modelParameters: ModelParameters
+      +getFormattedContentForAPI(): object
+    }
+
+    class FreeformPrompt {
+      -parts: ContentPart[]
+      +addText(text: string)
+      +addImage(imageData: blob)
+      +getFormattedContentForAPI(): object
+    }
+
+    class StructuredPrompt {
+      -examples: Example[]
+      -finalInput: string
+      +addExample(input: string, output: string)
+      +setFinalInput(text: string)
+      +getFormattedContentForAPI(): object
+    }
+
+    class ChatPrompt {
+      -history: ChatMessage[]
+      +addMessage(role: string, text: string)
+      +getFormattedContentForAPI(): object
+    }
+
+    class ContentPart {
+      &lt;&lt;abstract&gt;&gt;
+    }
+    class TextPart { +text: string }
+    class ImagePart { +inlineData: object }
+
+    class Example {
+      +input: string
+      +output: string
+    }
+
+    class ChatMessage {
+      +role: string
+      +parts: ContentPart[]
+    }
+
+    class ModelParameters {
+      +temperature: float
+      +topK: int
+      +topP: float
+    }
+
+    class CodeGenerator {
+      +generate(prompt: Prompt, language: string): string
+    }
+
+    class GenerativeAI_API_Client {
+      -baseUrl: string
+      +generateContent(payload: object, apiKey: string): Promise&lt;ModelResponse&gt;
+    }
+
+    class ModelResponse {
+      +responseText: string
+      +finishReason: string
+      +error: object
+    }
+
+    User --&gt; AIStudioUI
+
+    AIStudioUI o-- &#34;1&#34; Prompt : &#34;manages&#34;
+    AIStudioUI o-- &#34;1&#34; ModelParameters : &#34;configures&#34;
+    AIStudioUI ..&gt; GenerativeAI_API_Client : &#34;uses&#34;
+    AIStudioUI ..&gt; CodeGenerator : &#34;uses&#34;
+
+    Prompt &lt;|-- FreeformPrompt
+    Prompt &lt;|-- StructuredPrompt
+    Prompt &lt;|-- ChatPrompt
+
+    Prompt o-- &#34;1&#34; ModelParameters
+
+    FreeformPrompt *-- &#34;0..*&#34; ContentPart
+    StructuredPrompt *-- &#34;0..*&#34; Example
+    ChatPrompt *-- &#34;0..*&#34; ChatMessage
+
+    ChatMessage o-- &#34;1..*&#34; ContentPart
+    ContentPart &lt;|-- TextPart
+    ContentPart &lt;|-- ImagePart
+</code></pre><h1 id="系统架构">系统架构</h1>
+<h1 id="时序图">时序图</h1>
+<h1 id="状态机">状态机</h1>
+<h1 id="对外api">对外API</h1>
+<p>AI Studio 本身不提供 API，但它使用的 Google Generative AI API (Gemini API) 是完全公开给开发者使用的。这正是 AI Studio &ldquo;Get Code&rdquo; 功能所生成代码的目标。</p>
+<ul>
+<li>核心 Endpoint: generateContent</li>
+<li>HTTP Method: POST</li>
+<li>URL: <a href="https://generativelanguage.googleapis.com/v1beta/models/%7Bmodel%7D:generateContent">https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent</a>
+{model}: 是一个占位符，例如 gemini-pro (文本) 或 gemini-pro-vision (文本和图片)。
+Authentication: 通过在请求头中加入 x-goog-api-key: YOUR_API_KEY 或使用 OAuth 实现。</li>
+</ul>
+<p>stateDiagram-v2
+[*] &ndash;&gt; Drafting: 新建或打开提示</p>
+<pre><code>state Drafting {
+    description: 用户正在编辑提示、调整参数
+}
+state Running {
+    description: 请求已发送，等待后端响应
+}
+state DisplayingResult {
+    description: 成功获取并显示结果
+}
+state Error {
+    description: API调用失败或返回错误
+}
+
+Drafting --&gt; Running: 用户点击 &quot;Run&quot;
+Running --&gt; DisplayingResult: API 返回成功 (200 OK)
+Running --&gt; Error: API 返回错误 (e.g., 4xx, 5xx)
+
+DisplayingResult --&gt; Drafting: 用户修改提示或参数
+Error --&gt; Drafting: 用户编辑提示以修复问题
 </code></pre><ul class="pa0">
   
 </ul>
@@ -187,7 +322,7 @@
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/blog/" >
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://quinnw7.github.io/blog/" >
     &copy;  Quinn's Blog 2025 
   </a>
     <div><div class="ananke-socials"></div>
