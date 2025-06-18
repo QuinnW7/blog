@@ -6,8 +6,15 @@
     <description>Recent content in Tech on Quinn&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 May 2025 14:42:33 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Jun 2025 14:50:33 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>x</title>
+      <link>http://localhost:1313/blog/tech/work/008-google-ai-studio/</link>
+      <pubDate>Wed, 18 Jun 2025 14:50:33 +0800</pubDate>
+      <guid>http://localhost:1313/blog/tech/work/008-google-ai-studio/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://aistudio.google.com/prompts/new_chat&#34;&gt;https://aistudio.google.com/prompts/new_chat&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>MCP工具适配</title>
       <link>http://localhost:1313/blog/tech/work/007-mcp%E5%B7%A5%E5%85%B7%E9%80%82%E9%85%8D/</link>

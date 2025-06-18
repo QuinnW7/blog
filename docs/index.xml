@@ -6,14 +6,35 @@
     <description>Recent content in Welcome to Quinn&#39;s Blog on Quinn&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Jun 2025 10:08:33 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Jun 2025 14:50:33 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2025.06.16</title>
+      <title>x</title>
+      <link>http://localhost:1313/blog/tech/work/008-google-ai-studio/</link>
+      <pubDate>Wed, 18 Jun 2025 14:50:33 +0800</pubDate>
+      <guid>http://localhost:1313/blog/tech/work/008-google-ai-studio/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://aistudio.google.com/prompts/new_chat&#34;&gt;https://aistudio.google.com/prompts/new_chat&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2025.06.18</title>
+      <link>http://localhost:1313/blog/essay/diary/2025.06.18/</link>
+      <pubDate>Wed, 18 Jun 2025 14:47:33 +0800</pubDate>
+      <guid>http://localhost:1313/blog/essay/diary/2025.06.18/</guid>
+      <description>&lt;p&gt;做的好的：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2025.06.17</title>
+      <link>http://localhost:1313/blog/essay/diary/2025.06.17/</link>
+      <pubDate>Tue, 17 Jun 2025 10:28:33 +0800</pubDate>
+      <guid>http://localhost:1313/blog/essay/diary/2025.06.17/</guid>
+      <description>&lt;p&gt;做的好的：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;接口调通，时间掌握的很好！厉害了&lt;/li&gt;&#xA;&lt;li&gt;下班也早 嘻 20点多一点&lt;/li&gt;&#xA;&lt;li&gt;参与了部门活动，享受生活&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>2025.06.16(Mon.)</title>
       <link>http://localhost:1313/blog/essay/diary/2025.06.16/</link>
       <pubDate>Mon, 16 Jun 2025 10:08:33 +0800</pubDate>
       <guid>http://localhost:1313/blog/essay/diary/2025.06.16/</guid>
-      <description>&lt;p&gt;做的好的：&#xA;待改进：&lt;/p&gt;</description>
+      <description></description>
     </item>
     <item>
       <title>缠论</title>
@@ -48,7 +69,7 @@
       <link>http://localhost:1313/blog/essay/diary/2025.06.13/</link>
       <pubDate>Mon, 09 Jun 2025 14:42:33 +0800</pubDate>
       <guid>http://localhost:1313/blog/essay/diary/2025.06.13/</guid>
-      <description>&lt;p&gt;做的好的：ppt做的不错&lt;/p&gt;</description>
+      <description>&lt;p&gt;ppt做的不错&lt;/p&gt;</description>
     </item>
     <item>
       <title>stock</title>

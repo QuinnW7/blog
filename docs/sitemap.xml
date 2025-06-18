@@ -2,10 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/blog/essay/diary/2025.06.16/</loc>
-    <lastmod>2025-06-16T10:08:33+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/blog/</loc>
+    <lastmod>2025-06-18T14:50:33+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/tech/work/008-google-ai-studio/</loc>
+    <lastmod>2025-06-18T14:50:33+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/essay/diary/2025.06.18/</loc>
+    <lastmod>2025-06-18T14:47:33+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/essay/diary/2025.06.17/</loc>
+    <lastmod>2025-06-17T10:28:33+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/blog/essay/diary/2025.06.16/</loc>
     <lastmod>2025-06-16T10:08:33+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/essay/stock/%E7%BC%A0%E8%AE%BA/</loc>
