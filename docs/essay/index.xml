@@ -2,178 +2,192 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Essay on Quinn&#39;s Blog</title>
-    <link>https://quinnw7.github.io/blog/essay/</link>
+    <link>http://localhost:1313/blog/essay/</link>
     <description>Recent content in Essay on Quinn&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 02 Jul 2025 10:16:33 +0800</lastBuildDate>
-    <atom:link href="https://quinnw7.github.io/blog/essay/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Jul 2025 10:16:33 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/essay/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2025.07.04</title>
+      <link>http://localhost:1313/blog/essay/diary/2025.07/2025.07.04/</link>
+      <pubDate>Fri, 04 Jul 2025 10:16:33 +0800</pubDate>
+      <guid>http://localhost:1313/blog/essay/diary/2025.07/2025.07.04/</guid>
+      <description>&lt;p&gt;中午pepper请我吃大餐，下午请假去惠州玩啦&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2025.07.03</title>
+      <link>http://localhost:1313/blog/essay/diary/2025.07/2025.07.03/</link>
+      <pubDate>Thu, 03 Jul 2025 10:16:33 +0800</pubDate>
+      <guid>http://localhost:1313/blog/essay/diary/2025.07/2025.07.03/</guid>
+      <description>&lt;p&gt;妈呀，一到早上就看到有人预约行家，预约我教练！&lt;/p&gt;</description>
+    </item>
     <item>
       <title>2025.07.02</title>
-      <link>https://quinnw7.github.io/blog/essay/diary/2025.07/2025.07.02/</link>
+      <link>http://localhost:1313/blog/essay/diary/2025.07/2025.07.02/</link>
       <pubDate>Wed, 02 Jul 2025 10:16:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/diary/2025.07/2025.07.02/</guid>
-      <description></description>
+      <guid>http://localhost:1313/blog/essay/diary/2025.07/2025.07.02/</guid>
+      <description>&lt;p&gt;今天有在实践各种软件，但没什么方向，处于一个到处看看的状态，所以有主动推动是否要和算法对齐下目标&lt;/p&gt;</description>
     </item>
     <item>
       <title>2025.07.01</title>
-      <link>https://quinnw7.github.io/blog/essay/diary/2025.07/2025.07.01/</link>
+      <link>http://localhost:1313/blog/essay/diary/2025.07/2025.07.01/</link>
       <pubDate>Tue, 01 Jul 2025 10:07:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/diary/2025.07/2025.07.01/</guid>
+      <guid>http://localhost:1313/blog/essay/diary/2025.07/2025.07.01/</guid>
       <description>&lt;p&gt;下半年第一天！元气满满！&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Life Coach]笔记2</title>
-      <link>https://quinnw7.github.io/blog/essay/life_coach/%E6%95%99%E7%BB%832/</link>
+      <link>http://localhost:1313/blog/essay/life_coach/%E6%95%99%E7%BB%832/</link>
       <pubDate>Mon, 30 Jun 2025 17:04:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/life_coach/%E6%95%99%E7%BB%832/</guid>
+      <guid>http://localhost:1313/blog/essay/life_coach/%E6%95%99%E7%BB%832/</guid>
       <description>&lt;p&gt;第三次车轮战，被教练话题：&lt;strong&gt;为何对于一些重要的机会反而一直不开始&lt;/strong&gt;，6号，整体说客户拿到了结果，还不错&#xA;点评 ：斗哥、淑瑗教练&lt;/p&gt;</description>
     </item>
     <item>
       <title>2025.06.26</title>
-      <link>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.26/</link>
+      <link>http://localhost:1313/blog/essay/diary/2025.06/2025.06.26/</link>
       <pubDate>Thu, 26 Jun 2025 10:07:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.26/</guid>
+      <guid>http://localhost:1313/blog/essay/diary/2025.06/2025.06.26/</guid>
       <description></description>
     </item>
     <item>
       <title>2025.06.27</title>
-      <link>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.27/</link>
+      <link>http://localhost:1313/blog/essay/diary/2025.06/2025.06.27/</link>
       <pubDate>Thu, 26 Jun 2025 10:07:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.27/</guid>
+      <guid>http://localhost:1313/blog/essay/diary/2025.06/2025.06.27/</guid>
       <description>&lt;p&gt;今天没啥事，看业界新闻来着，挺好的，决定以后每天干不进去活的时候就看会&lt;/p&gt;</description>
     </item>
     <item>
       <title>2025.06.30</title>
-      <link>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.30mon./</link>
+      <link>http://localhost:1313/blog/essay/diary/2025.06/2025.06.30mon./</link>
       <pubDate>Thu, 26 Jun 2025 10:07:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.30mon./</guid>
+      <guid>http://localhost:1313/blog/essay/diary/2025.06/2025.06.30mon./</guid>
       <description>&lt;p&gt;早睡+锻炼+健康饮食，主动争取想做的事！很棒！&#xA;最近两天都有睡9个小时，挺好的，明显感觉是有在修复身体！&lt;/p&gt;</description>
     </item>
     <item>
       <title>2025.06.25</title>
-      <link>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.25/</link>
+      <link>http://localhost:1313/blog/essay/diary/2025.06/2025.06.25/</link>
       <pubDate>Wed, 25 Jun 2025 10:07:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.25/</guid>
+      <guid>http://localhost:1313/blog/essay/diary/2025.06/2025.06.25/</guid>
       <description>&lt;ul&gt;&#xA;&lt;li&gt;坚持运动了！&lt;/li&gt;&#xA;&lt;li&gt;坚持学习了！&lt;/li&gt;&#xA;&lt;li&gt;没午睡&lt;/li&gt;&#xA;&lt;li&gt;找到了整理材料的方法，整理的还是有点慢，主要有点看不进去&#xA;&lt;ul&gt;&#xA;&lt;li&gt;怎么能看进去呢？&#xA;&lt;ul&gt;&#xA;&lt;li&gt;这玩意还是得实践，动手！不要只看！&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;不过晚上的时候，眼压可能有点高，早回家睡觉了，挺好的，难受就先走回家睡觉&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>2025.06.24</title>
-      <link>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.24/</link>
+      <link>http://localhost:1313/blog/essay/diary/2025.06/2025.06.24/</link>
       <pubDate>Tue, 24 Jun 2025 10:07:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.24/</guid>
+      <guid>http://localhost:1313/blog/essay/diary/2025.06/2025.06.24/</guid>
       <description></description>
     </item>
     <item>
       <title>2025.06.23(Mon.)</title>
-      <link>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.23mon./</link>
+      <link>http://localhost:1313/blog/essay/diary/2025.06/2025.06.23mon./</link>
       <pubDate>Mon, 23 Jun 2025 15:07:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.23mon./</guid>
+      <guid>http://localhost:1313/blog/essay/diary/2025.06/2025.06.23mon./</guid>
       <description></description>
     </item>
     <item>
       <title>四叶草</title>
-      <link>https://quinnw7.github.io/blog/essay/stock/%E5%9B%9B%E5%8F%B6%E8%8D%89/</link>
+      <link>http://localhost:1313/blog/essay/stock/%E5%9B%9B%E5%8F%B6%E8%8D%89/</link>
       <pubDate>Sun, 22 Jun 2025 09:00:00 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/stock/%E5%9B%9B%E5%8F%B6%E8%8D%89/</guid>
+      <guid>http://localhost:1313/blog/essay/stock/%E5%9B%9B%E5%8F%B6%E8%8D%89/</guid>
       <description></description>
     </item>
     <item>
       <title>2025.06.20</title>
-      <link>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.20/</link>
+      <link>http://localhost:1313/blog/essay/diary/2025.06/2025.06.20/</link>
       <pubDate>Fri, 20 Jun 2025 11:07:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.20/</guid>
+      <guid>http://localhost:1313/blog/essay/diary/2025.06/2025.06.20/</guid>
       <description></description>
     </item>
     <item>
       <title>2025.06.19</title>
-      <link>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.19/</link>
+      <link>http://localhost:1313/blog/essay/diary/2025.06/2025.06.19/</link>
       <pubDate>Thu, 19 Jun 2025 15:07:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.19/</guid>
+      <guid>http://localhost:1313/blog/essay/diary/2025.06/2025.06.19/</guid>
       <description>&lt;p&gt;做的好的：&lt;/p&gt;</description>
     </item>
     <item>
       <title>2025.06.18</title>
-      <link>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.18/</link>
+      <link>http://localhost:1313/blog/essay/diary/2025.06/2025.06.18/</link>
       <pubDate>Wed, 18 Jun 2025 14:47:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.18/</guid>
+      <guid>http://localhost:1313/blog/essay/diary/2025.06/2025.06.18/</guid>
       <description>&lt;p&gt;做的好的：&lt;/p&gt;</description>
     </item>
     <item>
       <title>2025.06.17</title>
-      <link>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.17/</link>
+      <link>http://localhost:1313/blog/essay/diary/2025.06/2025.06.17/</link>
       <pubDate>Tue, 17 Jun 2025 10:28:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.17/</guid>
+      <guid>http://localhost:1313/blog/essay/diary/2025.06/2025.06.17/</guid>
       <description>&lt;p&gt;做的好的：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;接口调通，时间掌握的很好！厉害了&lt;/li&gt;&#xA;&lt;li&gt;下班也早 嘻 20点多一点&lt;/li&gt;&#xA;&lt;li&gt;参与了部门活动，享受生活&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>2025.06.16(Mon.)</title>
-      <link>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.16mon./</link>
+      <link>http://localhost:1313/blog/essay/diary/2025.06/2025.06.16mon./</link>
       <pubDate>Mon, 16 Jun 2025 10:08:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.16mon./</guid>
+      <guid>http://localhost:1313/blog/essay/diary/2025.06/2025.06.16mon./</guid>
       <description></description>
     </item>
     <item>
       <title>缠论</title>
-      <link>https://quinnw7.github.io/blog/essay/stock/%E7%BC%A0%E8%AE%BA/</link>
+      <link>http://localhost:1313/blog/essay/stock/%E7%BC%A0%E8%AE%BA/</link>
       <pubDate>Wed, 11 Jun 2025 10:42:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/stock/%E7%BC%A0%E8%AE%BA/</guid>
+      <guid>http://localhost:1313/blog/essay/stock/%E7%BC%A0%E8%AE%BA/</guid>
       <description></description>
     </item>
     <item>
       <title>2025.06.09(Mon.)</title>
-      <link>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.09mon./</link>
+      <link>http://localhost:1313/blog/essay/diary/2025.06/2025.06.09mon./</link>
       <pubDate>Mon, 09 Jun 2025 14:42:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.09mon./</guid>
+      <guid>http://localhost:1313/blog/essay/diary/2025.06/2025.06.09mon./</guid>
       <description>&lt;p&gt;做的好的：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;今天有按计划严格执行，完成deerflow的调研并在会上积极发言提意见&lt;/li&gt;&#xA;&lt;li&gt;见了云博，开始看缠论，第一天要坚持&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;待改进：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;理了一下分享的内容思路，但没开始&lt;/li&gt;&#xA;&lt;li&gt;实习生要多问一下遇没遇到问题，他一个很简单的问题卡太久了(dockerfile也要拷文件)&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>2025.06.10</title>
-      <link>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.10/</link>
+      <link>http://localhost:1313/blog/essay/diary/2025.06/2025.06.10/</link>
       <pubDate>Mon, 09 Jun 2025 14:42:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.10/</guid>
+      <guid>http://localhost:1313/blog/essay/diary/2025.06/2025.06.10/</guid>
       <description>&lt;p&gt;做的好的：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;工作上：小组内分享deerflow，调研的不错，于需求结合的也不错&lt;/li&gt;&#xA;&lt;li&gt;注意身体：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;下午开始头痛，晚上早回家休息，注意身体&lt;/li&gt;&#xA;&lt;li&gt;早上晨跑3公里&lt;/li&gt;&#xA;&lt;li&gt;下载了测压力app，挺好玩，比自己更早意识到身体变化&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;上班路上听缠论，有点启发&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;待改进：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;缠论笔记未立刻整理&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>2025.06.11</title>
-      <link>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.11/</link>
+      <link>http://localhost:1313/blog/essay/diary/2025.06/2025.06.11/</link>
       <pubDate>Mon, 09 Jun 2025 14:42:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.11/</guid>
+      <guid>http://localhost:1313/blog/essay/diary/2025.06/2025.06.11/</guid>
       <description></description>
     </item>
     <item>
       <title>2025.06.11</title>
-      <link>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.13/</link>
+      <link>http://localhost:1313/blog/essay/diary/2025.06/2025.06.13/</link>
       <pubDate>Mon, 09 Jun 2025 14:42:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/diary/2025.06/2025.06.13/</guid>
+      <guid>http://localhost:1313/blog/essay/diary/2025.06/2025.06.13/</guid>
       <description>&lt;p&gt;ppt做的不错&lt;/p&gt;</description>
     </item>
     <item>
       <title>stock</title>
-      <link>https://quinnw7.github.io/blog/essay/stock/8%E5%80%8D/</link>
+      <link>http://localhost:1313/blog/essay/stock/8%E5%80%8D/</link>
       <pubDate>Mon, 09 Jun 2025 10:42:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/stock/8%E5%80%8D/</guid>
+      <guid>http://localhost:1313/blog/essay/stock/8%E5%80%8D/</guid>
       <description></description>
     </item>
     <item>
       <title>理财agent</title>
-      <link>https://quinnw7.github.io/blog/essay/stock/%E7%90%86%E8%B4%A2agent/</link>
+      <link>http://localhost:1313/blog/essay/stock/%E7%90%86%E8%B4%A2agent/</link>
       <pubDate>Mon, 09 Jun 2025 10:42:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/stock/%E7%90%86%E8%B4%A2agent/</guid>
+      <guid>http://localhost:1313/blog/essay/stock/%E7%90%86%E8%B4%A2agent/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://km.woa.com/articles/show/630755?kmref=vkm_push&#34;&gt;https://km.woa.com/articles/show/630755?kmref=vkm_push&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Life Coach]被教练笔记1</title>
-      <link>https://quinnw7.github.io/blog/essay/life_coach/%E8%A2%AB%E6%95%99%E7%BB%831/</link>
+      <link>http://localhost:1313/blog/essay/life_coach/%E8%A2%AB%E6%95%99%E7%BB%831/</link>
       <pubDate>Wed, 28 May 2025 13:00:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/life_coach/%E8%A2%AB%E6%95%99%E7%BB%831/</guid>
+      <guid>http://localhost:1313/blog/essay/life_coach/%E8%A2%AB%E6%95%99%E7%BB%831/</guid>
       <description>&lt;p&gt;教练：斗哥&#xA;被教练话题：&lt;strong&gt;找到近2年的职业发展&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[Life Coach]笔记1</title>
-      <link>https://quinnw7.github.io/blog/essay/life_coach/%E6%95%99%E7%BB%831/</link>
+      <link>http://localhost:1313/blog/essay/life_coach/%E6%95%99%E7%BB%831/</link>
       <pubDate>Sat, 24 May 2025 17:04:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/essay/life_coach/%E6%95%99%E7%BB%831/</guid>
+      <guid>http://localhost:1313/blog/essay/life_coach/%E6%95%99%E7%BB%831/</guid>
       <description>&lt;p&gt;第一次车轮战，被教练话题：&lt;strong&gt;找到理想职业&lt;/strong&gt;，4号，20分钟就结束了，流程走完了，但没什么深度&#xA;点评 ：邓为教练&lt;/p&gt;</description>
     </item>
   </channel>

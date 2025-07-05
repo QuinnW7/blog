@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stock on Quinn&#39;s Blog</title>
+    <link>http://localhost:1313/blog/stock/</link>
+    <description>Recent content in Stock on Quinn&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Jun 2025 09:00:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/stock/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>四叶草</title>
+      <link>http://localhost:1313/blog/stock/%E5%9B%9B%E5%8F%B6%E8%8D%89/</link>
+      <pubDate>Sun, 22 Jun 2025 09:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/blog/stock/%E5%9B%9B%E5%8F%B6%E8%8D%89/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>缠论</title>
+      <link>http://localhost:1313/blog/stock/%E7%BC%A0%E8%AE%BA/</link>
+      <pubDate>Wed, 11 Jun 2025 10:42:33 +0800</pubDate>
+      <guid>http://localhost:1313/blog/stock/%E7%BC%A0%E8%AE%BA/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>8倍</title>
+      <link>http://localhost:1313/blog/stock/8%E5%80%8D/</link>
+      <pubDate>Mon, 09 Jun 2025 10:42:33 +0800</pubDate>
+      <guid>http://localhost:1313/blog/stock/8%E5%80%8D/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>理财agent</title>
+      <link>http://localhost:1313/blog/stock/%E7%90%86%E8%B4%A2agent/</link>
+      <pubDate>Mon, 09 Jun 2025 10:42:33 +0800</pubDate>
+      <guid>http://localhost:1313/blog/stock/%E7%90%86%E8%B4%A2agent/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://km.woa.com/articles/show/630755?kmref=vkm_push&#34;&gt;https://km.woa.com/articles/show/630755?kmref=vkm_push&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
