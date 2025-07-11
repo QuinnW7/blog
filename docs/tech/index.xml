@@ -6,8 +6,15 @@
     <description>Recent content in Tech on Quinn&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Jun 2025 14:50:33 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 11 Jul 2025 10:58:00 +0800</lastBuildDate>
     <atom:link href="https://quinnw7.github.io/blog/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何快速搭建Browser Use？</title>
+      <link>https://quinnw7.github.io/blog/tech/work/010-browser-use/</link>
+      <pubDate>Fri, 11 Jul 2025 10:58:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/tech/work/010-browser-use/</guid>
+      <description>&lt;p&gt;本文介绍了browser Use的定义， 展示参考manus行为的demo搭建的过程&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;当前使用playwright操作浏览器&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>Google AI Studio</title>
       <link>https://quinnw7.github.io/blog/tech/work/008-google-ai-studio/</link>

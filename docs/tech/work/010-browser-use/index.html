@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>如何快速搭建Browser Use？ | Quinn&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="本文介绍了browser Use的定义， 展示参考manus行为的demo搭建的过程
+
+当前使用playwright操作浏览器
+">
+    <meta name="generator" content="Hugo 0.147.3">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/blog/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://quinnw7.github.io/blog/tech/work/010-browser-use/">
+    
+
+    <meta property="og:url" content="https://quinnw7.github.io/blog/tech/work/010-browser-use/">
+  <meta property="og:site_name" content="Quinn&#39;s Blog">
+  <meta property="og:title" content="如何快速搭建Browser Use？">
+  <meta property="og:description" content="本文介绍了browser Use的定义， 展示参考manus行为的demo搭建的过程
+当前使用playwright操作浏览器">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2025-07-11T10:58:00+08:00">
+    <meta property="article:modified_time" content="2025-07-11T10:58:00+08:00">
+
+  <meta itemprop="name" content="如何快速搭建Browser Use？">
+  <meta itemprop="description" content="本文介绍了browser Use的定义， 展示参考manus行为的demo搭建的过程
+当前使用playwright操作浏览器">
+  <meta itemprop="datePublished" content="2025-07-11T10:58:00+08:00">
+  <meta itemprop="dateModified" content="2025-07-11T10:58:00+08:00">
+  <meta itemprop="wordCount" content="270">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="如何快速搭建Browser Use？">
+  <meta name="twitter:description" content="本文介绍了browser Use的定义， 展示参考manus行为的demo搭建的过程
+当前使用playwright操作浏览器">
+
+      
+    
+	
+  </head><body class="ma0 garamond bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/blog/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Quinn&#39;s Blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/tech" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/read" title="Read page">
+              Read
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/stock" title="Stock page">
+              Stock
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/life_coach" title="Life Coach page">
+              Life Coach
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/diary" title="Diary page">
+              Diary
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Tech
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">如何快速搭建Browser Use？</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-07-11T10:58:00+08:00">July 11, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>本文介绍了browser Use的定义， 展示参考manus行为的demo搭建的过程</p>
+<ul>
+<li>当前使用playwright操作浏览器</li>
+</ul>
+<h1 id="背景">背景</h1>
+<p>作为Deep Research三大工具之一,另两个是Code和Search</p>
+<h1 id="原理">原理</h1>
+<p>要让 AI Agent 完成任务，可以直接让 AI 浏览网页，像人一样去理解页面。
+核心原理：观察-思考-行动（Observation-Thought-Action, OTA）循环，所有智能体的浏览器操作都可以归结为一个持续循环的框架，这与强化学习中的智能体与环境交互的模式非常相似。</p>
+<ul>
+<li>观察 (Observation-O): 智能体需要“看到”并“理解”当前浏览器的界面。这是输入环节。</li>
+<li>思考 (Thought-T): 基于当前的观察结果和最终的总任务目标，智能体（其核心是LLM）进行推理和规划，决定下一步应该做什么。这是决策环节。</li>
+<li>行动 (Action-A): 智能体执行上一步决策出的具体操作，例如点击按钮、输入文字、滚动页面等。这是输出环节。</li>
+</ul>
+<h1 id="业界调研">业界调研</h1>
+<p>主流程：理解任务 -&gt; 制定计划 -&gt; 浏览网页 -&gt; 观察和理解内容 -&gt; 提取信息 -&gt; 综合分析 -&gt; 得出结论</p>
+<h2 id="manus">Manus</h2>
+<h1 id="技术方案">技术方案</h1>
+<h2 id="流程图">流程图</h2>
+<p><img src="img.png" alt="img.png"></p>
+<h1 id="dockerfile">DockerFile</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 1. 使用更优的 node:slim 基础镜像</span>
+</span></span><span style="display:flex;"><span>FROM node:22-bookworm-slim
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. 环境变量</span>
+</span></span><span style="display:flex;"><span>ENV PW_VERSION<span style="color:#f92672">=</span>1.44.0
+</span></span><span style="display:flex;"><span>ENV DEBIAN_FRONTEND<span style="color:#f92672">=</span>noninteractive
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -- 用户和路径配置 --</span>
+</span></span><span style="display:flex;"><span>ENV APP_USER<span style="color:#f92672">=</span>pwuser
+</span></span><span style="display:flex;"><span>ENV APP_HOME<span style="color:#f92672">=</span>/home/<span style="color:#e6db74">${</span>APP_USER<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -- VNC 和 Web VNC 配置 --</span>
+</span></span><span style="display:flex;"><span>ENV VNC_RESOLUTION<span style="color:#f92672">=</span>1280x720
+</span></span><span style="display:flex;"><span>ENV NOVNC_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">6901</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 【变化】移除了 VNC_PASSWORD 环境变量，因为它不再被使用</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -- Playwright 服务配置 --</span>
+</span></span><span style="display:flex;"><span>ENV PW_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">3000</span>
+</span></span><span style="display:flex;"><span>ENV PW_BROWSER<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;chromium&#34;</span>
+</span></span><span style="display:flex;"><span>ENV PW_HEADLESS<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. 精细的镜像瘦身</span>
+</span></span><span style="display:flex;"><span>RUN echo <span style="color:#e6db74">&#39;path-exclude /usr/share/doc/*&#39;</span> &gt; /etc/dpkg/dpkg.cfg.d/01_nodoc <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    echo <span style="color:#e6db74">&#39;path-exclude /usr/share/man/*&#39;</span> &gt;&gt; /etc/dpkg/dpkg.cfg.d/01_nodoc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 4. 创建用户</span>
+</span></span><span style="display:flex;"><span>RUN useradd --create-home --shell /bin/bash --uid <span style="color:#ae81ff">1001</span> <span style="color:#e6db74">${</span>APP_USER<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 5. 安装系统依赖</span>
+</span></span><span style="display:flex;"><span>USER root
+</span></span><span style="display:flex;"><span>RUN apt-get update <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    apt-get install -y --no-install-recommends <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    supervisor <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#75715e"># 【变化】移除了 tigervnc-common，因为它只包含不再需要的 vncpasswd</span>
+</span></span><span style="display:flex;"><span>    tigervnc-standalone-server <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    novnc websockify <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    fluxbox xterm fonts-liberation <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    wget ca-certificates <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    echo <span style="color:#e6db74">&#34;===== Installing Google Chrome Stable =====&#34;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    wget -q -O /tmp/chrome.deb <span style="color:#e6db74">&#34;https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb&#34;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    apt-get install -y /tmp/chrome.deb <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    npm config set cache /tmp/npm_cache_root --global <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    npx --yes playwright@<span style="color:#e6db74">${</span>PW_VERSION<span style="color:#e6db74">}</span> install-deps <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    apt-get autoremove -y <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    apt-get clean <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    rm -rf /var/lib/apt/lists/* /var/cache/apt/* /tmp/* /var/tmp/* /root/.npm
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 6. 复制所有配置文件和脚本</span>
+</span></span><span style="display:flex;"><span>COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+</span></span><span style="display:flex;"><span>COPY start-playwright-server.js <span style="color:#e6db74">${</span>APP_HOME<span style="color:#e6db74">}</span>/start-playwright-server.js
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 【变化】移除了所有与 entrypoint.sh 相关的行</span>
+</span></span><span style="display:flex;"><span>RUN chown <span style="color:#e6db74">${</span>APP_USER<span style="color:#e6db74">}</span>:<span style="color:#e6db74">${</span>APP_USER<span style="color:#e6db74">}</span> <span style="color:#e6db74">${</span>APP_HOME<span style="color:#e6db74">}</span>/start-playwright-server.js
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 7. 以非 root 用户身份安装项目级的 Playwright</span>
+</span></span><span style="display:flex;"><span>USER <span style="color:#e6db74">${</span>APP_USER<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>WORKDIR <span style="color:#e6db74">${</span>APP_HOME<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>RUN npm install playwright@<span style="color:#e6db74">${</span>PW_VERSION<span style="color:#e6db74">}</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    npx playwright install <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    rm -rf /tmp/* ~/.npm
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 切换回 root 用户来运行进程管理器</span>
+</span></span><span style="display:flex;"><span>USER root
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 8. 暴露端口，并设置默认命令</span>
+</span></span><span style="display:flex;"><span>EXPOSE <span style="color:#e6db74">${</span>NOVNC_PORT<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>EXPOSE <span style="color:#e6db74">${</span>PW_PORT<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 【变化】移除了 ENTRYPOINT，CMD 现在直接启动 supervisord</span>
+</span></span><span style="display:flex;"><span>CMD <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;/usr/bin/supervisord&#34;</span>, <span style="color:#e6db74">&#34;-c&#34;</span>, <span style="color:#e6db74">&#34;/etc/supervisor/conf.d/supervisord.conf&#34;</span><span style="color:#f92672">]</span>
+</span></span></code></pre></div><ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://quinnw7.github.io/blog/" >
+    &copy;  Quinn's Blog 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
