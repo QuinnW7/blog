@@ -17,16 +17,16 @@
     </item>
     <item>
       <title>Eino介绍</title>
-      <link>https://quinnw7.github.io/blog/tech/work/011-eino/</link>
+      <link>https://quinnw7.github.io/blog/tech/work/eino/</link>
       <pubDate>Tue, 15 Jul 2025 10:58:00 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/tech/work/011-eino/</guid>
+      <guid>https://quinnw7.github.io/blog/tech/work/eino/</guid>
       <description>&lt;p&gt;本文详细介绍了Eino的系统架构、用例图、静态建模、状态机、时序图、对外API，可以系统了解Eino设计思想及原理&#xA;&lt;a href=&#34;https://www.cloudwego.io/zh/docs/eino/overview/eino_open_source/&#34;&gt;https://www.cloudwego.io/zh/docs/eino/overview/eino_open_source/&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>如何本地快速搭建Browser Use</title>
-      <link>https://quinnw7.github.io/blog/tech/work/010-browser-use/</link>
+      <link>https://quinnw7.github.io/blog/tech/work/browser-use/</link>
       <pubDate>Fri, 11 Jul 2025 10:58:00 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/tech/work/010-browser-use/</guid>
+      <guid>https://quinnw7.github.io/blog/tech/work/browser-use/</guid>
       <description>&lt;p&gt;本文介绍了browser Use的定义， 展示参考manus行为的demo搭建的过程&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;当前使用playwright操作浏览器&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
@@ -101,9 +101,9 @@
     </item>
     <item>
       <title>智能体中台</title>
-      <link>https://quinnw7.github.io/blog/tech/work/001-%E6%99%BA%E8%83%BD%E4%BD%93%E4%B8%AD%E5%8F%B0/</link>
+      <link>https://quinnw7.github.io/blog/tech/work/%E6%99%BA%E8%83%BD%E4%BD%93%E4%B8%AD%E5%8F%B0/</link>
       <pubDate>Thu, 22 May 2025 10:42:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/tech/work/001-%E6%99%BA%E8%83%BD%E4%BD%93%E4%B8%AD%E5%8F%B0/</guid>
+      <guid>https://quinnw7.github.io/blog/tech/work/%E6%99%BA%E8%83%BD%E4%BD%93%E4%B8%AD%E5%8F%B0/</guid>
       <description></description>
     </item>
     <item>
