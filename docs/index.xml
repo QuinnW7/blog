@@ -1,15 +1,50 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Welcome to Quinn&#39;s Blog on Quinn&#39;s Blog</title>
+    <title>Welcome to My Blog on Quinn&#39;s Blog</title>
     <link>https://quinnw7.github.io/blog/</link>
-    <description>Recent content in Welcome to Quinn&#39;s Blog on Quinn&#39;s Blog</description>
+    <description>Recent content in Welcome to My Blog on Quinn&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jul 2025 10:58:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 16 Jul 2025 10:29:33 +0800</lastBuildDate>
     <atom:link href="https://quinnw7.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>如何快速搭建Browser Use？</title>
+      <title>2025.07.16</title>
+      <link>https://quinnw7.github.io/blog/diary/2025.07/2025.07.16/</link>
+      <pubDate>Wed, 16 Jul 2025 10:29:33 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/diary/2025.07/2025.07.16/</guid>
+      <description>&lt;p&gt;嗓子好多了，嘻，迅速恢复！&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2025.07.21(Mon.)</title>
+      <link>https://quinnw7.github.io/blog/diary/2025.07/2025.07.21mon./</link>
+      <pubDate>Wed, 16 Jul 2025 10:29:33 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/diary/2025.07/2025.07.21mon./</guid>
+      <description>&lt;p&gt;😷一周了，怎么还不好&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Eino介绍</title>
+      <link>https://quinnw7.github.io/blog/tech/work/011-eino/</link>
+      <pubDate>Tue, 15 Jul 2025 10:58:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/tech/work/011-eino/</guid>
+      <description>&lt;p&gt;本文详细介绍了Eino的系统架构、用例图、静态建模、状态机、时序图、对外API，可以系统了解Eino设计思想及原理&#xA;&lt;a href=&#34;https://www.cloudwego.io/zh/docs/eino/overview/eino_open_source/&#34;&gt;https://www.cloudwego.io/zh/docs/eino/overview/eino_open_source/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2025.07.15</title>
+      <link>https://quinnw7.github.io/blog/diary/2025.07/2025.07.15/</link>
+      <pubDate>Tue, 15 Jul 2025 10:29:33 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/diary/2025.07/2025.07.15/</guid>
+      <description>&lt;p&gt;嗓子痛的不想说话，早回家休息&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2025.07.14(Mon.)</title>
+      <link>https://quinnw7.github.io/blog/diary/2025.07/2025.07.14mon./</link>
+      <pubDate>Mon, 14 Jul 2025 10:16:33 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/diary/2025.07/2025.07.14mon./</guid>
+      <description>&lt;p&gt;体态学习整理，嗓子痛，生病早回家休息&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>如何本地快速搭建Browser Use</title>
       <link>https://quinnw7.github.io/blog/tech/work/010-browser-use/</link>
       <pubDate>Fri, 11 Jul 2025 10:58:00 +0800</pubDate>
       <guid>https://quinnw7.github.io/blog/tech/work/010-browser-use/</guid>
@@ -45,9 +80,9 @@
     </item>
     <item>
       <title>2025.07.07(Mon.)</title>
-      <link>https://quinnw7.github.io/blog/diary/2025.07/2025.07.07/</link>
+      <link>https://quinnw7.github.io/blog/diary/2025.07/2025.07.07mon./</link>
       <pubDate>Mon, 07 Jul 2025 10:16:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/diary/2025.07/2025.07.07/</guid>
+      <guid>https://quinnw7.github.io/blog/diary/2025.07/2025.07.07mon./</guid>
       <description>&lt;p&gt;梳理了工作思路，调整了重点，不是跟着产品后面，而是有想法做技术该做的&lt;/p&gt;</description>
     </item>
     <item>
@@ -128,13 +163,6 @@
       <description></description>
     </item>
     <item>
-      <title>四叶草</title>
-      <link>https://quinnw7.github.io/blog/stock/%E5%9B%9B%E5%8F%B6%E8%8D%89/</link>
-      <pubDate>Sun, 22 Jun 2025 09:00:00 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/stock/%E5%9B%9B%E5%8F%B6%E8%8D%89/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>2025.06.20</title>
       <link>https://quinnw7.github.io/blog/diary/2025.06/2025.06.20/</link>
       <pubDate>Fri, 20 Jun 2025 11:07:33 +0800</pubDate>
@@ -184,13 +212,6 @@
       <description></description>
     </item>
     <item>
-      <title>缠论</title>
-      <link>https://quinnw7.github.io/blog/stock/%E7%BC%A0%E8%AE%BA/</link>
-      <pubDate>Wed, 11 Jun 2025 10:42:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/stock/%E7%BC%A0%E8%AE%BA/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>2025.06.09(Mon.)</title>
       <link>https://quinnw7.github.io/blog/diary/2025.06/2025.06.09mon./</link>
       <pubDate>Mon, 09 Jun 2025 14:42:33 +0800</pubDate>
@@ -217,27 +238,6 @@
       <pubDate>Mon, 09 Jun 2025 14:42:33 +0800</pubDate>
       <guid>https://quinnw7.github.io/blog/diary/2025.06/2025.06.13/</guid>
       <description>&lt;p&gt;ppt做的不错&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>8倍</title>
-      <link>https://quinnw7.github.io/blog/stock/8%E5%80%8D/</link>
-      <pubDate>Mon, 09 Jun 2025 10:42:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/stock/8%E5%80%8D/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>理财agent</title>
-      <link>https://quinnw7.github.io/blog/stock/%E7%90%86%E8%B4%A2agent/</link>
-      <pubDate>Mon, 09 Jun 2025 10:42:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/stock/%E7%90%86%E8%B4%A2agent/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://km.woa.com/articles/show/630755?kmref=vkm_push&#34;&gt;https://km.woa.com/articles/show/630755?kmref=vkm_push&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[被教练]近2年职业发展</title>
-      <link>https://quinnw7.github.io/blog/life_coach/%E8%A2%AB%E6%95%99%E7%BB%831/</link>
-      <pubDate>Wed, 28 May 2025 13:00:33 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/life_coach/%E8%A2%AB%E6%95%99%E7%BB%831/</guid>
-      <description>&lt;p&gt;教练：斗哥&#xA;被教练话题：&lt;strong&gt;找到近2年的职业发展&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>MCP工具适配</title>

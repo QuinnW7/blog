@@ -1,4 +1,4 @@
 ---
-title: "Welcome to Quinn's Blog"
+title: "Welcome to My Blog"
 featured_image: "/images/coffee.jpg"
 ---

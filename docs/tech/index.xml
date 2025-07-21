@@ -6,10 +6,17 @@
     <description>Recent content in Tech on Quinn&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 11 Jul 2025 10:58:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 15 Jul 2025 10:58:00 +0800</lastBuildDate>
     <atom:link href="https://quinnw7.github.io/blog/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>如何快速搭建Browser Use？</title>
+      <title>Eino介绍</title>
+      <link>https://quinnw7.github.io/blog/tech/work/011-eino/</link>
+      <pubDate>Tue, 15 Jul 2025 10:58:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/tech/work/011-eino/</guid>
+      <description>&lt;p&gt;本文详细介绍了Eino的系统架构、用例图、静态建模、状态机、时序图、对外API，可以系统了解Eino设计思想及原理&#xA;&lt;a href=&#34;https://www.cloudwego.io/zh/docs/eino/overview/eino_open_source/&#34;&gt;https://www.cloudwego.io/zh/docs/eino/overview/eino_open_source/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>如何本地快速搭建Browser Use</title>
       <link>https://quinnw7.github.io/blog/tech/work/010-browser-use/</link>
       <pubDate>Fri, 11 Jul 2025 10:58:00 +0800</pubDate>
       <guid>https://quinnw7.github.io/blog/tech/work/010-browser-use/</guid>
