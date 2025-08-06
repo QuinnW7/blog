@@ -6,8 +6,15 @@
     <description>Recent content in Welcome to My Blog on Quinn&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Jul 2025 10:58:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 04 Aug 2025 16:58:00 +0800</lastBuildDate>
     <atom:link href="https://quinnw7.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LangGraph</title>
+      <link>https://quinnw7.github.io/blog/tech/work/langgraph/</link>
+      <pubDate>Mon, 04 Aug 2025 16:58:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/tech/work/langgraph/</guid>
+      <description>&lt;p&gt;本文详细介绍了LangGraph的主要技术&#xA;&lt;a href=&#34;https://www.cloudwego.io/zh/docs/eino/overview/eino_open_source/&#34;&gt;https://www.cloudwego.io/zh/docs/eino/overview/eino_open_source/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Eino介绍</title>
       <link>https://quinnw7.github.io/blog/tech/work/eino/</link>
