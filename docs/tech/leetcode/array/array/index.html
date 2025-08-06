@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>数组题解思路 | Quinn&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="下面整理了 LeetCode 数组/切片问题的几种最核心、最常用的解法，并结合 Go 语言的特点和经典题目进行说明。">
+    <meta name="generator" content="Hugo 0.147.3">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/blog/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://quinnw7.github.io/blog/tech/leetcode/array/array/">
+    
+
+    <meta property="og:url" content="https://quinnw7.github.io/blog/tech/leetcode/array/array/">
+  <meta property="og:site_name" content="Quinn&#39;s Blog">
+  <meta property="og:title" content="数组题解思路">
+  <meta property="og:description" content="下面整理了 LeetCode 数组/切片问题的几种最核心、最常用的解法，并结合 Go 语言的特点和经典题目进行说明。">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+    <meta property="article:published_time" content="2025-08-06T10:42:33+08:00">
+    <meta property="article:modified_time" content="2025-08-06T10:42:33+08:00">
+
+  <meta itemprop="name" content="数组题解思路">
+  <meta itemprop="description" content="下面整理了 LeetCode 数组/切片问题的几种最核心、最常用的解法，并结合 Go 语言的特点和经典题目进行说明。">
+  <meta itemprop="datePublished" content="2025-08-06T10:42:33+08:00">
+  <meta itemprop="dateModified" content="2025-08-06T10:42:33+08:00">
+  <meta itemprop="wordCount" content="854">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="数组题解思路">
+  <meta name="twitter:description" content="下面整理了 LeetCode 数组/切片问题的几种最核心、最常用的解法，并结合 Go 语言的特点和经典题目进行说明。">
+
+      
+    
+	
+  </head><body class="ma0 garamond bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/blog/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Quinn&#39;s Blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/tech" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/read" title="Read page">
+              Read
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/stock" title="Stock page">
+              Stock
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/life_coach" title="Life Coach page">
+              Life Coach
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/diary" title="Diary page">
+              Diary
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Tech
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">数组题解思路</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-08-06T10:42:33+08:00">August 6, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>下面整理了 LeetCode 数组/切片问题的几种最核心、最常用的解法，并结合 Go 语言的特点和经典题目进行说明。</p>
+<h3 id="leetcode-数组切片问题核心解法汇总-go-版">LeetCode 数组/切片问题核心解法汇总 (Go 版)</h3>
+<p>数组问题的魅力在于，它看似简单，但其解法往往蕴含着对<strong>空间复杂度</strong>和<strong>时间复杂度</strong>的极致追求。很多最优解都需要在 O(1) 的额外空间内完成。</p>
+<p>以下是五种最关键的解题思想：</p>
+<ol>
+<li><strong>双指针 (Two Pointers)</strong></li>
+<li><strong>前缀和 (Prefix Sum)</strong></li>
+<li><strong>二分查找 (Binary Search)</strong></li>
+<li><strong>哈希表 (Hash Table / Map)</strong></li>
+<li><strong>排序 (Sorting)</strong></li>
+</ol>
+<hr>
+<h3 id="一双指针-two-pointers">一、双指针 (Two Pointers)</h3>
+<p><strong>核心逻辑</strong>：
+使用两个指针（通常是数组的索引）在序列中同向或反向移动，通过指针的移动和元素比较来解决问题。这种方法可以将某些需要 O(n²) 暴力求解的问题优化到 O(n)。</p>
+<p>双指针有三种经典模式：</p>
+<h4 id="1-左右指针-对撞指针">1. 左右指针 (对撞指针)</h4>
+<p><strong>模式</strong>：一个指针 <code>left</code> 从数组头部开始，一个指针 <code>right</code> 从数组尾部开始，两者相向移动，直到相遇或交错。
+<strong>适用场景</strong>：常用于<strong>有序数组</strong>中查找数对、反转数组等。</p>
+<p><strong>示例题目：<a href="https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/">167. 两数之和 II - 输入有序数组</a></strong></p>
+<blockquote>
+<p>在一个升序排列的整数数组 <code>numbers</code> 中，找到两个数使得它们相加之和等于一个特定的目标值 <code>target</code>。</p></blockquote>
+<p><strong>Go 代码实现</strong>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">twoSum</span>(<span style="color:#a6e22e">numbers</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 初始化左右指针</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">left</span>, <span style="color:#a6e22e">right</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">numbers</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">left</span> &lt; <span style="color:#a6e22e">right</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">numbers</span>[<span style="color:#a6e22e">left</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">numbers</span>[<span style="color:#a6e22e">right</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 题目要求返回的索引是从 1 开始</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">left</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">right</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>}
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sum</span> &lt; <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 和太小，说明左边的数太小，需要向右移动 left 指针来增大和</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">left</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> { <span style="color:#75715e">// sum &gt; target</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 和太大，说明右边的数太大，需要向左移动 right 指针来减小和</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">right</span><span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> []<span style="color:#66d9ef">int</span>{<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>} <span style="color:#75715e">// 未找到</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>代码解析</strong>：
+利用数组的有序性。如果 <code>sum &lt; target</code>，移动 <code>left</code> 指针是唯一可能让 <code>sum</code> 变大的方式。反之，如果 <code>sum &gt; target</code>，移动 <code>right</code> 指针是唯一可能让 <code>sum</code> 变小的方式。通过这种方式，我们在一次遍历中就找到了答案。</p>
+<h4 id="2-快慢指针">2. 快慢指针</h4>
+<p><strong>模式</strong>：一个快指针 <code>fast</code> 在前探路，一个慢指针 <code>slow</code> 在后。<code>fast</code> 每次移动一步，<code>slow</code> 根据一定条件移动。
+<strong>适用场景</strong>：原地修改数组，如删除/移动元素、数组去重等。</p>
+<p><strong>示例题目：<a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-array/">26. 删除有序数组中的重复项</a></strong></p>
+<blockquote>
+<p>给你一个有序数组 <code>nums</code> ，请你<strong>原地</strong>删除重复出现的元素，使每个元素只出现一次，返回删除后数组的新长度。</p></blockquote>
+<p><strong>Go 代码实现</strong>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">removeDuplicates</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">nums</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// slow 指针指向下一个将要被赋值的唯一元素的位置</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// fast 指针用于遍历整个数组</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">slow</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">fast</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">fast</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">fast</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 如果 fast 指向的元素与它前一个元素不同</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 说明遇到了一个新的、不重复的元素</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">fast</span>] <span style="color:#f92672">!=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">fast</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 将这个新元素放到 slow 指针的位置</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">slow</span>] = <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">fast</span>]
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// slow 指针后移，准备接收下一个唯一元素</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">slow</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">slow</span> <span style="color:#75715e">// slow 的值即为不重复元素的个数</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>代码解析</strong>：
+<code>slow</code> 指针维护了一个 &ldquo;无重复元素&rdquo; 区间的右边界。<code>fast</code> 指针负责探索新元素。当 <code>fast</code> 发现一个与之前元素不同的新元素时，就把它复制到 <code>slow</code> 的位置，然后 <code>slow</code> 前进。整个过程只遍历一次数组，且是原地修改。</p>
+<h4 id="3-滑动窗口">3. 滑动窗口</h4>
+<p><strong>模式</strong>：由 <code>left</code> 和 <code>right</code> 指针构成一个 &ldquo;窗口&rdquo;。<code>right</code> 指针负责扩大窗口，<code>left</code> 指针负责收缩窗口。
+<strong>适用场景</strong>：求解满足特定条件的<strong>连续子数组</strong>问题，如 &ldquo;最小长度&rdquo;、&ldquo;最大长度&rdquo;、&ldquo;出现次数&rdquo; 等。</p>
+<p><strong>示例题目：<a href="https://leetcode.cn/problems/minimum-size-subarray-sum/">209. 长度最小的子数组</a></strong></p>
+<blockquote>
+<p>给定一个含有 <code>n</code> 个正整数的数组和一个正整数 <code>target</code> 。找出该数组中满足其和 <code>≥ target</code> 的长度最小的 <strong>连续子数组</strong>。</p></blockquote>
+<p><strong>Go 代码实现</strong>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;math&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">minSubArrayLen</span>(<span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">left</span>, <span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">minLength</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">MaxInt32</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">right</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">right</span> &lt; len(<span style="color:#a6e22e">nums</span>); <span style="color:#a6e22e">right</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 1. right 指针向右移动，扩大窗口，累加窗口内的和</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">right</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 2. 当窗口内的和满足条件时，开始收缩窗口</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 更新最小长度</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">currentLength</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">right</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">currentLength</span> &lt; <span style="color:#a6e22e">minLength</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">minLength</span> = <span style="color:#a6e22e">currentLength</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 3. left 指针向右移动，收缩窗口</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">sum</span> <span style="color:#f92672">-=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">left</span>]
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">left</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">minLength</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">MaxInt32</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span> <span style="color:#75715e">// 未找到满足条件的子数组</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">minLength</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>代码解析</strong>：
+这是一个典型的滑动窗口模板。外层循环控制 <code>right</code> 指针，不断扩大窗口。内层循环检查当前窗口是否满足条件，如果满足，就更新结果，并移动 <code>left</code> 指针收缩窗口，以寻找可能存在的更短的满足条件的窗口。</p>
+<hr>
+<h3 id="二前缀和-prefix-sum">二、前缀和 (Prefix Sum)</h3>
+<p><strong>核心逻辑</strong>：
+通过预处理，创建一个 <code>prefixSum</code> 数组，其中 <code>prefixSum[i]</code> 存储原数组从 <code>0</code> 到 <code>i-1</code> 的元素之和。这样，任意区间 <code>[i, j]</code> 的和就可以在 O(1) 时间内通过 <code>prefixSum[j+1] - prefixSum[i]</code> 计算得出，避免了重复计算。</p>
+<p><strong>适用场景</strong>：需要频繁计算数组某个区间的和。</p>
+<p><strong>示例题目：<a href="https://leetcode.cn/problems/subarray-sum-equals-k/">560. 和为 K 的子数组</a></strong></p>
+<blockquote>
+<p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code> ，请你统计并返回 该数组中和为 <code>k</code> 的<strong>连续子数组</strong>的个数。</p></blockquote>
+<p><strong>Go 代码实现</strong> (前缀和 + 哈希表):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">subarraySum</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">k</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// map[prefixSum]count: 存储某个前缀和出现的次数</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">prefixSumCount</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// base case: 前缀和为 0 出现了 1 次 (表示空数组)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">prefixSumCount</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">count</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">currentSum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span> <span style="color:#75715e">// 当前从 0 到 i 的前缀和</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">currentSum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">num</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 我们要找的是一个前缀和 `prevSum`，使得 `currentSum - prevSum = k`</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 这等价于 `prevSum = currentSum - k`</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 我们在哈希表中查找之前出现过多少次 `currentSum - k`</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">times</span>, <span style="color:#a6e22e">found</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">prefixSumCount</span>[<span style="color:#a6e22e">currentSum</span><span style="color:#f92672">-</span><span style="color:#a6e22e">k</span>]; <span style="color:#a6e22e">found</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">count</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">times</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 将当前的前缀和存入哈希表，或更新其出现次数</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">prefixSumCount</span>[<span style="color:#a6e22e">currentSum</span>]<span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">count</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>代码解析</strong>：
+这个问题是前缀和思想的绝佳应用。我们想找 <code>sum(nums[i:j]) == k</code>。这等价于 <code>prefixSum[j] - prefixSum[i-1] == k</code>。
+我们变换一下公式：<code>prefixSum[i-1] = prefixSum[j] - k</code>。
+当我们遍历数组，计算到索引 <code>j</code> 的当前前缀和 <code>currentSum</code> (<code>prefixSum[j]</code>) 时，我们只需要查找在 <code>j</code> 之前，有多少个 <code>i-1</code> 满足它们的前缀和等于 <code>currentSum - k</code>。使用哈希表可以 O(1) 地完成这个查找。</p>
+<hr>
+<h3 id="三二分查找-binary-search">三、二分查找 (Binary Search)</h3>
+<p><strong>核心逻辑</strong>：
+在一个<strong>有序</strong>或具有<strong>单调性</strong>的数据集合中进行查找。每次将查找空间缩小一半，时间复杂度为 O(log n)。</p>
+<p><strong>适用场景</strong>：</p>
+<ol>
+<li>有序数组的查找。</li>
+<li>问题答案具有单调性，可以对 &ldquo;答案&rdquo; 进行二分查找。</li>
+</ol>
+<p><strong>示例题目：<a href="https://leetcode.cn/problems/binary-search/">704. 二分查找</a></strong></p>
+<blockquote>
+<p>给定一个 <code>n</code> 个元素有序的（升序）整型数组 <code>nums</code> 和一个目标值 <code>target</code> ，写一个函数搜索 <code>nums</code> 中的 <code>target</code>，如果目标值存在返回下标，否则返回 -1。</p></blockquote>
+<p><strong>Go 代码实现</strong>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">search</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">left</span>, <span style="color:#a6e22e">right</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, len(<span style="color:#a6e22e">nums</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">right</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// mid := (left + right) / 2 // 可能溢出</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">mid</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">right</span><span style="color:#f92672">-</span><span style="color:#a6e22e">left</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#75715e">// 更安全的写法</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">mid</span>] <span style="color:#f92672">==</span> <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">mid</span>
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">mid</span>] &lt; <span style="color:#a6e22e">target</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 中间值太小，目标在右侧</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">left</span> = <span style="color:#a6e22e">mid</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> { <span style="color:#75715e">// nums[mid] &gt; target</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 中间值太大，目标在左侧</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">right</span> = <span style="color:#a6e22e">mid</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#75715e">// 未找到</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>代码解析</strong>：
+这是最标准的二分查找模板。关键在于 <code>while left &lt;= right</code> 循环条件和每次循环后如何收缩 <code>left</code> 和 <code>right</code> 的边界。<code>mid</code> 的计算方式 <code>left + (right-left)/2</code> 是为了防止 <code>left + right</code> 在某些语言中可能出现的整数溢出，是最佳实践。</p>
+<hr>
+<h3 id="四哈希表-hash-table--map">四、哈希表 (Hash Table / Map)</h3>
+<p><strong>核心逻辑</strong>：
+利用键值对 (key-value) 存储信息，提供平均 O(1) 时间复杂度的插入和查找操作。这是一种典型的 &ldquo;空间换时间&rdquo; 策略。</p>
+<p><strong>适用场景</strong>：需要快速查找一个元素是否存在、或需要统计元素出现的频率。</p>
+<p><strong>示例题目：<a href="https://leetcode.cn/problems/two-sum/">1. 两数之和</a></strong></p>
+<blockquote>
+<p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 和为目标值 <code>target</code> 的那两个整数，并返回它们的数组下标。</p></blockquote>
+<p><strong>Go 代码实现</strong>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">twoSum</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">target</span> <span style="color:#66d9ef">int</span>) []<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// map[value]index: 存储数组中值和其对应的索引</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">valMap</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">int</span>]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">num</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 计算需要找到的另一个数</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">complement</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">num</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 在 map 中查找 complement 是否存在</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">found</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">valMap</span>[<span style="color:#a6e22e">complement</span>]; <span style="color:#a6e22e">found</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 如果存在，说明找到了答案</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> []<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">i</span>}
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 如果不存在，将当前数字和它的索引存入 map</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 以便后续的数字进行匹配</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">valMap</span>[<span style="color:#a6e22e">num</span>] = <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span> <span style="color:#75715e">// 未找到</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>代码解析</strong>：
+我们遍历数组，对于每个元素 <code>num</code>，我们计算出它的 &ldquo;补数&rdquo; <code>complement</code>。然后，我们不去数组里查找 <code>complement</code>（这将是 O(n) 操作），而是去哈希表里查找。如果哈希表里有，说明 <code>complement</code> 在当前元素 <code>num</code> 之前已经出现过，直接返回结果。如果没找到，就把当前 <code>num</code> 和它的索引 <code>i</code> 存入哈希表，供后面的元素查询。这样，总时间复杂度就是 O(n)。</p>
+<hr>
+<h3 id="五排序-sorting">五、排序 (Sorting)</h3>
+<p><strong>核心逻辑</strong>：
+排序本身不是目的，而是手段。将无序的数组变得有序后，往往能解锁更高效的解法，比如双指针、二分查找等。</p>
+<p><strong>适用场景</strong>：当元素的相对顺序不重要，或者问题的解决依赖于元素的有序性时。</p>
+<p><strong>示例题目：<a href="https://leetcode.cn/problems/merge-intervals/">56. 合并区间</a></strong></p>
+<blockquote>
+<p>以数组 <code>intervals</code> 表示若干个区间的集合，其中 <code>intervals[i] = [start_i, end_i]</code>。请你合并所有重叠的区间，并返回一个不重叠的区间数组。</p></blockquote>
+<p><strong>Go 代码实现</strong>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;sort&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">merge</span>(<span style="color:#a6e22e">intervals</span> [][]<span style="color:#66d9ef">int</span>) [][]<span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">intervals</span>) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">intervals</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 1. 关键第一步：按区间的起始位置排序</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Slice</span>(<span style="color:#a6e22e">intervals</span>, <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">bool</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">intervals</span>[<span style="color:#a6e22e">i</span>][<span style="color:#ae81ff">0</span>] &lt; <span style="color:#a6e22e">intervals</span>[<span style="color:#a6e22e">j</span>][<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">merged</span> <span style="color:#f92672">:=</span> [][]<span style="color:#66d9ef">int</span>{<span style="color:#a6e22e">intervals</span>[<span style="color:#ae81ff">0</span>]} <span style="color:#75715e">// 初始化结果，放入第一个区间</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">intervals</span>); <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">lastMerged</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">merged</span>[len(<span style="color:#a6e22e">merged</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">current</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">intervals</span>[<span style="color:#a6e22e">i</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 2. 比较当前区间与已合并的最后一个区间</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">current</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">lastMerged</span>[<span style="color:#ae81ff">1</span>] {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 有重叠，合并区间。更新最后一个合并区间的 end</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// end 取两者 end 的最大值</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">current</span>[<span style="color:#ae81ff">1</span>] &gt; <span style="color:#a6e22e">lastMerged</span>[<span style="color:#ae81ff">1</span>] {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">merged</span>[len(<span style="color:#a6e22e">merged</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>] = <span style="color:#a6e22e">current</span>[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 无重叠，将当前区间直接加入结果集</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">merged</span> = append(<span style="color:#a6e22e">merged</span>, <span style="color:#a6e22e">current</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">merged</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>代码解析</strong>：
+这个问题的核心在于，如果不排序，判断任意两个区间是否重叠非常麻烦。一旦我们按区间的起始位置 <code>start</code> 进行了排序，问题就变得简单了：一个区间 <code>i</code> 只可能与它前面紧邻的那个已合并好的区间 <code>i-1</code> 发生重叠。我们只需要遍历排序后的数组，逐个比较和合并即可。排序将一个复杂的问题转化为了一个简单的线性扫描问题。</p>
+<hr>
+<h3 id="总结">总结</h3>
+<ul>
+<li>遇到<strong>有序数组</strong>，优先考虑<strong>二分查找</strong>和<strong>双指针</strong>。</li>
+<li>遇到<strong>连续子数组</strong>问题（求和、求最值），优先考虑<strong>滑动窗口</strong>和<strong>前缀和</strong>。</li>
+<li>遇到查找数对、检查元素是否存在/频率，优先考虑<strong>哈希表</strong>。</li>
+<li>遇到原地修改数组，优先考虑<strong>双指针</strong>（尤其是快慢指针）。</li>
+<li>如果问题不依赖元素原始顺序，或者排序后能大大简化问题，<strong>排序</strong>就是你的第一步。</li>
+</ul>
+<p>在实际解题中，这些方法经常会组合使用，例如 &ldquo;前缀和 + 哈希表&rdquo;、&ldquo;排序 + 双指针&rdquo;。理解每种方法的底层逻辑和适用场景，是高效解决数组问题的关键。</p><ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://quinnw7.github.io/blog/" >
+    &copy;  Quinn's Blog 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

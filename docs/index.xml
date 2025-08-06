@@ -6,8 +6,15 @@
     <description>Recent content in Welcome to My Blog on Quinn&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Aug 2025 16:58:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 06 Aug 2025 10:42:33 +0800</lastBuildDate>
     <atom:link href="https://quinnw7.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数组题解思路</title>
+      <link>https://quinnw7.github.io/blog/tech/leetcode/array/array/</link>
+      <pubDate>Wed, 06 Aug 2025 10:42:33 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/tech/leetcode/array/array/</guid>
+      <description>&lt;p&gt;下面整理了 LeetCode 数组/切片问题的几种最核心、最常用的解法，并结合 Go 语言的特点和经典题目进行说明。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>LangGraph</title>
       <link>https://quinnw7.github.io/blog/tech/work/langgraph/</link>
