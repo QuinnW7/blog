@@ -6,8 +6,22 @@
     <description>Recent content in Welcome to My Blog on Quinn&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Aug 2025 10:42:33 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 15 Sep 2025 10:00:00 +0800</lastBuildDate>
     <atom:link href="https://quinnw7.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2025.09.15</title>
+      <link>https://quinnw7.github.io/blog/product/%E9%87%91%E8%9E%8D%E6%95%B0%E5%AD%97%E4%BA%BA/</link>
+      <pubDate>Mon, 15 Sep 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/product/%E9%87%91%E8%9E%8D%E6%95%B0%E5%AD%97%E4%BA%BA/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://km.woa.com/articles/show/629876?kmref=badge&#34;&gt;《从技术到场景：蚂蚁数字人多模态交互在金融领域的应用分析》&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>简历准本版</title>
+      <link>https://quinnw7.github.io/blog/tech/cv/%E5%87%86%E5%A4%87%E7%89%88/</link>
+      <pubDate>Wed, 10 Sep 2025 17:55:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/tech/cv/%E5%87%86%E5%A4%87%E7%89%88/</guid>
+      <description>&lt;p&gt;以终为始，介绍什么？再去看什么？&lt;/p&gt;</description>
+    </item>
     <item>
       <title>数组题解思路</title>
       <link>https://quinnw7.github.io/blog/tech/leetcode/array/array/</link>
