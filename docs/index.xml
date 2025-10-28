@@ -6,21 +6,56 @@
     <description>Recent content in Welcome to My Blog on Quinn&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Sep 2025 10:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 27 Oct 2025 10:00:00 +0800</lastBuildDate>
     <atom:link href="https://quinnw7.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RL infra概述</title>
+      <link>https://quinnw7.github.io/blog/assay/llm/rl-infra%E6%A6%82%E8%BF%B0/</link>
+      <pubDate>Mon, 27 Oct 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/assay/llm/rl-infra%E6%A6%82%E8%BF%B0/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;写给对RL感兴趣的技术/产品看，偏科普为主，后面可以深入的时候，可以结合算法痛点找出应该解决的问题&lt;/li&gt;&#xA;&lt;li&gt;擅长调研，系列更新没问题&lt;/li&gt;&#xA;&lt;li&gt;公众号/知乎/论文&amp;ndash;&amp;gt;也许不够系统，或者不够通俗，没有实战&lt;/li&gt;&#xA;&lt;li&gt;实战结合&lt;/li&gt;&#xA;&lt;li&gt;对RL分为哪几个部分有个清晰的了解，对RL产生些兴趣&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;希望读者产生什么样的印象？&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;通俗好理解，一下子就知道这玩意的工作逻辑&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;哪些是共识区？&lt;/p&gt;&#xA;&lt;p&gt;有哪些是读者知道的，作者不知道的？&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;可能会挑战的&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>2025.10.21</title>
+      <link>https://quinnw7.github.io/blog/product/%E8%80%81%E6%9B%BE/</link>
+      <pubDate>Tue, 21 Oct 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/product/%E8%80%81%E6%9B%BE/</guid>
+      <description>&lt;p&gt;《向产品高阶进阶P7》&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2025.09.22</title>
+      <link>https://quinnw7.github.io/blog/product/sense/</link>
+      <pubDate>Mon, 22 Sep 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/product/sense/</guid>
+      <description>&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;高级产品经理（Senior PM）需要具备的核心能力&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;作为5年后台开发，如何系统提升以成功转型&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>2025.09.18</title>
+      <link>https://quinnw7.github.io/blog/product/eino/</link>
+      <pubDate>Thu, 18 Sep 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/product/eino/</guid>
+      <description>&lt;p&gt;eino实现一个智能体demo，给产品用，我觉得应该很简单才对，或者用&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2025.09.18</title>
+      <link>https://quinnw7.github.io/blog/product/mauns/</link>
+      <pubDate>Thu, 18 Sep 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/product/mauns/</guid>
+      <description>&lt;p&gt;Mauns&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2025.09.17</title>
+      <link>https://quinnw7.github.io/blog/product/2025q3%E8%B4%A2%E6%8A%A5/</link>
+      <pubDate>Wed, 17 Sep 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/product/2025q3%E8%B4%A2%E6%8A%A5/</guid>
+      <description>&lt;p&gt;从财报，看哪些是重点事项&lt;/p&gt;</description>
+    </item>
     <item>
       <title>2025.09.15</title>
       <link>https://quinnw7.github.io/blog/product/%E9%87%91%E8%9E%8D%E6%95%B0%E5%AD%97%E4%BA%BA/</link>
       <pubDate>Mon, 15 Sep 2025 10:00:00 +0800</pubDate>
       <guid>https://quinnw7.github.io/blog/product/%E9%87%91%E8%9E%8D%E6%95%B0%E5%AD%97%E4%BA%BA/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://km.woa.com/articles/show/629876?kmref=badge&#34;&gt;《从技术到场景：蚂蚁数字人多模态交互在金融领域的应用分析》&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>简历准本版</title>
-      <link>https://quinnw7.github.io/blog/tech/cv/%E5%87%86%E5%A4%87%E7%89%88/</link>
-      <pubDate>Wed, 10 Sep 2025 17:55:00 +0800</pubDate>
-      <guid>https://quinnw7.github.io/blog/tech/cv/%E5%87%86%E5%A4%87%E7%89%88/</guid>
-      <description>&lt;p&gt;以终为始，介绍什么？再去看什么？&lt;/p&gt;</description>
     </item>
     <item>
       <title>数组题解思路</title>
@@ -105,6 +140,13 @@
       <pubDate>Fri, 23 May 2025 13:42:33 +0800</pubDate>
       <guid>https://quinnw7.github.io/blog/tech/work/005-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93/</guid>
       <description>&lt;p&gt;大纲：&lt;/p&gt;&#xA;&lt;p&gt;引言：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;未来世界长什么样？&#xA;&lt;ul&gt;&#xA;&lt;li&gt;引出AGI&#xA;&lt;ul&gt;&#xA;&lt;li&gt;引出MAS&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;提一嘴单智能体，然后介绍MAS的关键实现技术&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;&#xA;&lt;p&gt;基于单智能体基础上，扩展&lt;/p&gt;&#xA;&lt;h1 id=&#34;目标&#34;&gt;目标&lt;/h1&gt;&#xA;&lt;p&gt;AGI 的全称是 Artificial General Intelligence（通用人工智能），指的是一种理论上具备人类水平理解和学习能力的智能体，能够在任何认知任务中像人类一样思考、学习和解决问题（甚至超越人类）&lt;/p&gt;&#xA;&lt;p&gt;多智能体系统（MAS）是AGI的必经之路： 当前通过多个专用Agent协作，逐步逼近复杂任务处理能力（如Manus AI调度数十个Agent完成全链工作流）。&lt;/p&gt;&#xA;&lt;p&gt;A2A 开源智能体通信协议&#xA;&lt;a href=&#34;https://developers.googleblog.com/zh-hans/a2a-a-new-era-of-agent-interoperability/&#34;&gt;https://developers.googleblog.com/zh-hans/a2a-a-new-era-of-agent-interoperability/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>俞军产品方法论</title>
+      <link>https://quinnw7.github.io/blog/read/%E4%BF%9E%E5%86%9B%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95%E8%AE%BA/</link>
+      <pubDate>Thu, 22 May 2025 17:42:33 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/read/%E4%BF%9E%E5%86%9B%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95%E8%AE%BA/</guid>
+      <description></description>
     </item>
     <item>
       <title>原则</title>
