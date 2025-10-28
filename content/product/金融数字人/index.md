@@ -1,7 +1,7 @@
 +++
 date = '2025-09-15T10:00:00+08:00'
 draft = false
-title = '2025.09.15'
+title = '金融数字人'
 +++
 [《从技术到场景：蚂蚁数字人多模态交互在金融领域的应用分析》](https://km.woa.com/articles/show/629876?kmref=badge)
 <!--more-->
