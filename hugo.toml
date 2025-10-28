@@ -5,9 +5,9 @@ title = "Quinn's Blog"
 publishDir = "docs"  # 将生成的文件输出到 docs/ 目录
 
 [params]
-recent_posts_number = 7  # 首页显示的最新文章数量
+recent_posts_number = 10  # 首页显示的最新文章数量
 body_classes = "garamond bg-near-white"
-mainSections = ["tech", "read","stock","life-coach","product"]
+mainSections = ["tech", "read","stock","life-coach","product","assay"]
 
 [[menu.main]]
 name = "Home"
@@ -37,5 +37,8 @@ weight = 6
 name = "Product"
 url = "/product"
 weight = 7
-
+[[menu.main]]
+name = "Assay"
+url = "/assay"
+weight = 8
 
