@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>AngelAgent | Quinn&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="feature/angentflow-deepswe 分支">
+    <meta name="generator" content="Hugo 0.147.3">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/blog/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://quinnw7.github.io/blog/assay/angelagent/">
+    
+
+    <meta property="og:url" content="https://quinnw7.github.io/blog/assay/angelagent/">
+  <meta property="og:site_name" content="Quinn&#39;s Blog">
+  <meta property="og:title" content="AngelAgent">
+  <meta property="og:description" content="feature/angentflow-deepswe 分支">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="assay">
+    <meta property="article:published_time" content="2025-11-04T10:00:00+08:00">
+    <meta property="article:modified_time" content="2025-11-04T10:00:00+08:00">
+
+  <meta itemprop="name" content="AngelAgent">
+  <meta itemprop="description" content="feature/angentflow-deepswe 分支">
+  <meta itemprop="datePublished" content="2025-11-04T10:00:00+08:00">
+  <meta itemprop="dateModified" content="2025-11-04T10:00:00+08:00">
+  <meta itemprop="wordCount" content="403">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AngelAgent">
+  <meta name="twitter:description" content="feature/angentflow-deepswe 分支">
+
+      
+    
+	
+  </head><body class="ma0 garamond bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/blog/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Quinn&#39;s Blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/tech" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/read" title="Read page">
+              Read
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/stock" title="Stock page">
+              Stock
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/life_coach" title="Life Coach page">
+              Life Coach
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/diary" title="Diary page">
+              Diary
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/product" title="Product page">
+              Product
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/assay" title="Assay page">
+              Assay
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Assays
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">AngelAgent</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-11-04T10:00:00+08:00">November 4, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>feature/angentflow-deepswe 分支</p>
+<p>使用了openai gym的标准env环境接口，对接我们的内部接口，现在需要找到具体怎么用的</p>
+<p>资源相关：
+<a href="https://git.woa.com/AngelAGI/AngelAgent/tree/feature/angentflow-deepswe/scripts/agentflow">https://git.woa.com/AngelAGI/AngelAgent/tree/feature/angentflow-deepswe/scripts/agentflow</a></p>
+<p>分为3个步骤：</p>
+<ul>
+<li>申请资源</li>
+<li>启动job</li>
+<li>启动task</li>
+</ul>
+<h1 id="智能体和环境交互">智能体和环境交互</h1>
+<h2 id="接口">接口</h2>
+<ul>
+<li>CreateEnv</li>
+<li>AgentInput</li>
+<li>Submit</li>
+<li>Finish</li>
+<li>Reward</li>
+<li>CloseEnv</li>
+</ul>
+<h2 id="时序图">时序图</h2>
+<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">sequenceDiagram
+    participant Agent as 智能体 (Agent)
+    participant Environment as 环境 (Environment)
+
+    %% ======================= 1. 初始化阶段 (Initialization) =======================
+    Note over Agent, Environment: 1. 初始化阶段
+    Agent-&gt;&gt;Environment: CreateEnvSpec(job_name, task_name)
+    activate Environment
+    Note right of Environment: 环境开始创建任务实例...
+    Environment--&gt;&gt;Agent: CreateEnvResponse(status=&#39;success&#39;, error=None)
+    deactivate Environment
+
+    %% ======================= 2. 核心交互循环 (Interaction Loop) =======================
+    Note over Agent, Environment: 2. 核心交互循环
+    
+    loop 任务交互循环
+        Agent-&gt;&gt;Environment: AgentInputSpec(task_name, step)
+        activate Environment
+        Note right of Environment: 环境准备当前状态
+        Environment--&gt;&gt;Agent: AgentInputResponse(observation, done, ...)
+        deactivate Environment
+        
+        Note left of Agent: 智能体检查 `done` 标志
+        
+        %% --- 思考与决策 (Think &amp; Decide) ---
+        activate Agent
+        Note left of Agent: 分析 observation，决定下一步行动
+        deactivate Agent
+        
+        alt Agent 决定继续执行动作
+            %% --- 行动 (Act) ---
+            Agent-&gt;&gt;Environment: SubmitSpec(response=&#34;some_action&#34;, step)
+            activate Environment
+            Note right of Environment: 环境执行动作并更新状态
+            Environment--&gt;&gt;Agent: SubmitResponse(status=&#39;success&#39;, error=None)
+            deactivate Environment
+
+        else Agent 决定主动结束任务
+            Agent-&gt;&gt;Environment: FinishSpec(finish_reason=&#34;completed&#34;, step)
+            activate Environment
+            Environment--&gt;&gt;Agent: FinishResponse(error=None)
+            deactivate Environment
+            Note over Agent, Environment: 智能体主动结束，跳出循环
+            %% 修正点：移除了此处无效的 `break` 关键字
+        end
+        
+    end
+    Note over Agent, Environment: 循环结束 (因 done=True 或 Agent 主动 break)
+
+    %% ======================= 3. 奖励评估阶段 (Evaluation) =======================
+    Note over Agent, Environment: 3. 奖励评估阶段
+    Agent-&gt;&gt;Environment: RewardSpec(task_name)
+    activate Environment
+    Note right of Environment: 环境计算最终奖励
+    Environment--&gt;&gt;Agent: RewardResponse(reward=0.95, finish=True, ...)
+    deactivate Environment
+
+    %% ======================= 4. 资源清理阶段 (Cleanup) =======================
+    Note over Agent, Environment: 4. 资源清理阶段
+    Agent-&gt;&gt;Environment: CloseEnvSpec(task_name)
+    activate Environment
+    Note right of Environment: 环境释放所有相关资源
+    Environment--&gt;&gt;Agent: CloseEnvResponse(status=&#39;success&#39;)
+    deactivate Environment
+    
+</code></pre><pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">classDiagram
+    direction LR
+
+    class BaseEnv {
+        &lt;&lt;abstract&gt;&gt;
+        +reset()
+        +step()
+        +close()
+    }
+
+    class AgentFlowEnv {
+        -base_url: str
+        -job_name: str
+        -env: AgentFlowGym
+        +reset()
+        +step()
+        +close()
+        +compute_final_reward()
+    }
+
+    class AgentFlowSWEEnv {
+        -entry: dict
+        -max_steps: int
+        +create_metadata(): dict
+        +step(action)
+    }
+
+    class AgentFlowGym {
+        -client: V1Client
+        -task_name: str
+        -step_id: int
+        +reset()
+        +step(action)
+        +close()
+        +watch_observation()
+        +watch_reward()
+        +compute_final_reward()
+    }
+    
+    %% --- Relationships ---
+    BaseEnv &lt;|-- AgentFlowEnv : &#34;继承&#34;
+    AgentFlowEnv &lt;|-- AgentFlowSWEEnv : &#34;继承&#34;
+    AgentFlowEnv o-- &#34;1&#34; AgentFlowGym : &#34;组合/使用&#34;
+  
+</code></pre><pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">sequenceDiagram
+    actor rllm
+    participant SWE_Env as AgentFlowSWEEnv
+    participant Base_Env as AgentFlowEnv
+    participant Gym_Env as AgentFlowGym
+    participant Service as AgentFlow Service (API)
+
+    User/Framework-&gt;&gt;SWE_Env: step(action)
+
+    activate SWE_Env
+    Note right of SWE_Env: 包含 try...except 错误处理
+    SWE_Env-&gt;&gt;Base_Env: super().step(action) // 调用父类的 step
+    deactivate SWE_Env
+
+    activate Base_Env
+    Base_Env-&gt;&gt;Gym_Env: step(action) // 将 step 调用委托给 AgentFlowGym
+    deactivate Base_Env
+
+    activate Gym_Env
+    Note right of Gym_Env: 提交动作并等待结果
+    Gym_Env-&gt;&gt;Service: HTTP POST /submit (携带 action)
+    Service--&gt;&gt;Gym_Env: Ack (动作已接收)
+
+    loop Polling for next observation
+        Gym_Env-&gt;&gt;Gym_Env: watch_observation()
+        Gym_Env-&gt;&gt;Service: HTTP GET /get_agent_input
+        Service--&gt;&gt;Gym_Env: return next_observation, done, info (或空)
+    end
+    Note right of Gym_Env: 成功获取到新 observation
+    Gym_Env--&gt;&gt;Base_Env: return next_obs, reward, done, info
+    deactivate Gym_Env
+
+    Base_Env--&gt;&gt;SWE_Env: return next_obs, reward, done, info
+    SWE_Env--&gt;&gt;User/Framework: return next_obs, reward, done, info
+</code></pre><ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://quinnw7.github.io/blog/" >
+    &copy;  Quinn's Blog 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
