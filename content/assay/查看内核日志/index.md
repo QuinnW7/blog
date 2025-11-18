@@ -24,3 +24,46 @@ dmesg -T
 dmesg -T | grep "Killed process"
 
 ```
+
+
+
+curl --location 'http://trpc.agent-flow.controller.x8.v2.production.polaris:8000/api/agentflow/v1/task/messages' \
+--header 'Content-Type: application/json' \
+--data '{
+"task_id": "agentflow-swe-754b0174-ca2f-460f-bd69-870793cc1825"
+}'
+
+
+8c24g 不改的时候搞一下 test_job_quinnyqwu_103
+![Clipboard_Screenshot_1763022099.png](..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fprivate%2Ftmp%2F.tempData_V2%2F.new_Clipboard%2FClipboard_Screenshot_1763022099.png)
+
+  
+```bash
+kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-86475b6b6d-5mkdm:/usr/local/agent-flow-proxy/remote_openhands/test_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunEval.prof test_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunEval.prof
+kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-86475b6b6d-5mkdm:/usr/local/agent-flow-proxy/remote_openhands/test_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunInfer.prof test_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunInfer.prof
+[test_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunInfer.prof](..%2F..%2F..%2F..%2F..%2F..%2FDownloads%2Ftest_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunInfer.prof)
+[test_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunEval.prof](..%2F..%2F..%2F..%2F..%2F..%2FDownloads%2Ftest_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunEval.prof)
+```
+
+发现没去掉日志也是100多秒，没有400多秒了，所以有问题，而且这次的cpu利用率高起来了
+8c24g 改完搞一下
+
+8c36g 不改的时候搞一下
+8c36g 改完搞一下
+
+
+使用perf分析吧
+```bash
+perf
+sudo py-spy top --pid 1610
+sudo py-spy record -p  --duration 800 -o python_view.svg
+
+
+# 针对同一个 PID
+sudo perf record -p 1610 -g -F 99 --period 800
+
+sudo perf script | ./FlameGraph/stackcollapse-perf.pl | ./FlameGraph/flamegraph.pl > system_view.svg
+
+
+
+```
