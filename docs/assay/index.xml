@@ -6,8 +6,43 @@
     <description>Recent content in Assays on Quinn&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 Nov 2025 10:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 18 Nov 2025 10:00:00 +0800</lastBuildDate>
     <atom:link href="https://quinnw7.github.io/blog/assay/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AngelFlow</title>
+      <link>https://quinnw7.github.io/blog/assay/openhands/</link>
+      <pubDate>Tue, 18 Nov 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/assay/openhands/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>《如何为微信公众号打造一个拥有记忆和风格的AI助手？》</title>
+      <link>https://quinnw7.github.io/blog/assay/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/</link>
+      <pubDate>Wed, 12 Nov 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/assay/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>python性能分析</title>
+      <link>https://quinnw7.github.io/blog/assay/python%E6%80%A7%E8%83%BD/</link>
+      <pubDate>Wed, 12 Nov 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/assay/python%E6%80%A7%E8%83%BD/</guid>
+      <description>&lt;p&gt;参考文章：https://blog.csdn.net/weixin_43700866/article/details/134443380&lt;/p&gt;&#xA;&lt;p&gt;kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-75767487d6-7zd28:/usr/local/agent-flow-proxy/remote_openhands/mem.py mem.py&lt;/p&gt;&#xA;&lt;p&gt;当前在压测openhands proxy,底层openhands需要分析下cpu利用率&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux-内核日志</title>
+      <link>https://quinnw7.github.io/blog/assay/%E6%9F%A5%E7%9C%8B%E5%86%85%E6%A0%B8%E6%97%A5%E5%BF%97/</link>
+      <pubDate>Fri, 07 Nov 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/assay/%E6%9F%A5%E7%9C%8B%E5%86%85%E6%A0%B8%E6%97%A5%E5%BF%97/</guid>
+      <description>&lt;p&gt;背景： 在压测一个模块，但发现pod里有oom的日志，想定位下先&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RL 行业宏观调研</title>
+      <link>https://quinnw7.github.io/blog/assay/rl-%E8%A1%8C%E4%B8%9A%E5%AE%8F%E8%A7%82%E8%B0%83%E7%A0%94/</link>
+      <pubDate>Fri, 07 Nov 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/assay/rl-%E8%A1%8C%E4%B8%9A%E5%AE%8F%E8%A7%82%E8%B0%83%E7%A0%94/</guid>
+      <description></description>
+    </item>
     <item>
       <title>RL infra</title>
       <link>https://quinnw7.github.io/blog/assay/rl-infra/</link>
@@ -30,11 +65,18 @@
       <description>&lt;p&gt;feature/angentflow-deepswe 分支&lt;/p&gt;</description>
     </item>
     <item>
-      <title>AngelFlow</title>
+      <title>AngelFlow(初版)</title>
       <link>https://quinnw7.github.io/blog/assay/agentflow/</link>
       <pubDate>Tue, 04 Nov 2025 10:00:00 +0800</pubDate>
       <guid>https://quinnw7.github.io/blog/assay/agentflow/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;img.png&#34; alt=&#34;img.png&#34;&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;介绍AngelFlow初版，后续将废弃⚠️&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AngelFlow压测</title>
+      <link>https://quinnw7.github.io/blog/assay/agentflow%E5%8E%8B%E6%B5%8B/</link>
+      <pubDate>Tue, 04 Nov 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/assay/agentflow%E5%8E%8B%E6%B5%8B/</guid>
+      <description></description>
     </item>
     <item>
       <title>深度学习4：强化学习</title>

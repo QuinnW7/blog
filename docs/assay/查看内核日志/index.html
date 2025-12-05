@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Linux-内核日志 | Quinn&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="背景： 在压测一个模块，但发现pod里有oom的日志，想定位下先">
+    <meta name="generator" content="Hugo 0.147.3">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/blog/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://quinnw7.github.io/blog/assay/%E6%9F%A5%E7%9C%8B%E5%86%85%E6%A0%B8%E6%97%A5%E5%BF%97/">
+    
+
+    <meta property="og:url" content="https://quinnw7.github.io/blog/assay/%E6%9F%A5%E7%9C%8B%E5%86%85%E6%A0%B8%E6%97%A5%E5%BF%97/">
+  <meta property="og:site_name" content="Quinn&#39;s Blog">
+  <meta property="og:title" content="Linux-内核日志">
+  <meta property="og:description" content="背景： 在压测一个模块，但发现pod里有oom的日志，想定位下先">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="assay">
+    <meta property="article:published_time" content="2025-11-07T10:00:00+08:00">
+    <meta property="article:modified_time" content="2025-11-07T10:00:00+08:00">
+
+  <meta itemprop="name" content="Linux-内核日志">
+  <meta itemprop="description" content="背景： 在压测一个模块，但发现pod里有oom的日志，想定位下先">
+  <meta itemprop="datePublished" content="2025-11-07T10:00:00+08:00">
+  <meta itemprop="dateModified" content="2025-11-07T10:00:00+08:00">
+  <meta itemprop="wordCount" content="133">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Linux-内核日志">
+  <meta name="twitter:description" content="背景： 在压测一个模块，但发现pod里有oom的日志，想定位下先">
+
+      
+    
+	
+
+  </head><body class="ma0 garamond bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/blog/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Quinn&#39;s Blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/tech" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/read" title="Read page">
+              Read
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/life_coach" title="Life Coach page">
+              Life Coach
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/product" title="Product page">
+              Product
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/assay" title="Assay page">
+              Assay
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Assays
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">Linux-内核日志</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-11-07T10:00:00+08:00">November 7, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>背景： 在压测一个模块，但发现pod里有oom的日志，想定位下先</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>Fri Nov  <span style="color:#ae81ff">7</span> 15:28:33 2025<span style="color:#f92672">]</span> oom-kill:constraint<span style="color:#f92672">=</span>CONSTRAINT_MEMCG,nodemask<span style="color:#f92672">=(</span>null<span style="color:#f92672">)</span>,cpuset<span style="color:#f92672">=</span>/,mems_allowed<span style="color:#f92672">=</span>0,oom_memcg<span style="color:#f92672">=</span>/tms/sec_saas,task_memcg<span style="color:#f92672">=</span>/tms/sec_saas,task<span style="color:#f92672">=</span>tdsp-container,pid<span style="color:#f92672">=</span>2080332,uid<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Fri Nov  <span style="color:#ae81ff">7</span> 15:28:33 2025<span style="color:#f92672">]</span> Memory cgroup out of memory: Killed process <span style="color:#ae81ff">2080332</span> <span style="color:#f92672">(</span>tdsp-container<span style="color:#f92672">)</span> total-vm:284668kB, anon-rss:90932kB, file-rss:2872kB, shmem-rss:0kB, UID:0 pgtables:260kB oom_score_adj:0 
+</span></span></code></pre></div><p>所有的 OOM (Out of Memory) 事件都指向了同一个内存控制组（cgroup）：<code>oom_memcg=/tms/sec_saas</code>，并且被杀死的进程都叫 <code>tdsp-container</code>。在 Kubernetes/容器环境中，每个 Pod 的资源限制都是通过 cgroup 来实现的，这个路径 <code>/tms/sec_saas</code> 就是这个 Pod 所属的 cgroup。</p>
+<p>然后就发现这个container不是我的，就找了管理集群的人，把住主机隔离了，是pod路由不到这台机器上</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dmesg -T
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查看是否有被oom的</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dmesg -T | grep <span style="color:#e6db74">&#34;Killed process&#34;</span>
+</span></span></code></pre></div><p>curl &ndash;location &lsquo;<a href="http://trpc.agent-flow.controller.x8.v2.production.polaris:8000/api/agentflow/v1/task/messages'">http://trpc.agent-flow.controller.x8.v2.production.polaris:8000/api/agentflow/v1/task/messages'</a> <br>
+&ndash;header &lsquo;Content-Type: application/json&rsquo; <br>
+&ndash;data &lsquo;{
+&ldquo;task_id&rdquo;: &ldquo;agentflow-swe-754b0174-ca2f-460f-bd69-870793cc1825&rdquo;
+}&rsquo;</p>
+<p>8c24g 不改的时候搞一下 test_job_quinnyqwu_103
+<img src="..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fprivate%2Ftmp%2F.tempData_V2%2F.new_Clipboard%2FClipboard_Screenshot_1763022099.png" alt="Clipboard_Screenshot_1763022099.png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-86475b6b6d-5mkdm:/usr/local/agent-flow-proxy/remote_openhands/test_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunEval.prof test_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunEval.prof
+</span></span><span style="display:flex;"><span>kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-86475b6b6d-5mkdm:/usr/local/agent-flow-proxy/remote_openhands/test_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunInfer.prof test_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunInfer.prof
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>test_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunInfer.prof<span style="color:#f92672">](</span>..%2F..%2F..%2F..%2F..%2F..%2FDownloads%2Ftest_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunInfer.prof<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>test_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunEval.prof<span style="color:#f92672">](</span>..%2F..%2F..%2F..%2F..%2F..%2FDownloads%2Ftest_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunEval.prof<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-86475b6b6d-272bt:/usr/local/agent-flow-proxy/remote_openhands/test_job_quinnyqwu_133_single_2025-11-19_15-07-45_10_profile_RunEval.prof test_job_quinnyqwu_133_single_2025-11-19_15-07-45_10_profile_RunEval.prof
+kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-86475b6b6d-272bt:/usr/local/agent-flow-proxy/remote_openhands/test_job_quinnyqwu_133_single_2025-11-19_15-07-45_10_profile_RunInfer.prof test_job_quinnyqwu_133_single_2025-11-19_15-07-45_10_profile_RunInfer.prof</p>
+<p>发现没去掉日志也是100多秒，没有400多秒了，所以有问题，而且这次的cpu利用率高起来了
+8c24g 改完搞一下</p>
+<p>8c36g 不改的时候搞一下
+8c36g 改完搞一下</p>
+<p>使用perf分析吧</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>perf
+</span></span><span style="display:flex;"><span>sudo py-spy top --pid <span style="color:#ae81ff">1610</span>
+</span></span><span style="display:flex;"><span>sudo py-spy record -p  --duration <span style="color:#ae81ff">800</span> -o python_view.svg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 针对同一个 PID</span>
+</span></span><span style="display:flex;"><span>sudo perf record -p <span style="color:#ae81ff">1610</span> -g -F <span style="color:#ae81ff">99</span> --period <span style="color:#ae81ff">800</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo perf script | ./FlameGraph/stackcollapse-perf.pl | ./FlameGraph/flamegraph.pl &gt; system_view.svg
+</span></span></code></pre></div><ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://quinnw7.github.io/blog/" >
+    &copy;  Quinn's Blog 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+    
+  </body>
+</html>

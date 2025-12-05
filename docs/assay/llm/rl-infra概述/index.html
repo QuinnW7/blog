@@ -81,6 +81,7 @@
       
     
 	
+
   </head><body class="ma0 garamond bg-near-white production">
 
     
@@ -121,20 +122,8 @@
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="/blog/stock" title="Stock page">
-              Stock
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white white-90 no-underline" href="/blog/life_coach" title="Life Coach page">
               Life Coach
-            </a>
-          </li>
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white white-90 no-underline" href="/blog/diary" title="Diary page">
-              Diary
             </a>
           </li>
           
@@ -285,7 +274,8 @@
 </ul>
 </li>
 </ul>
-<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph LR
+<pre class="mermaid">
+  graph LR
 A(k8s)
 B(Ray)
 C(Rollout Workers)
@@ -307,10 +297,13 @@ C--&gt;D
 D--将数据存进--&gt;E
 D--广播--&gt;C 
 P--&gt;F
-</code></pre><p>所以这里涉及的基础设施就是任务的分发和轨迹数据的收集</p>
-<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph LR
+</pre>
+<p>所以这里涉及的基础设施就是任务的分发和轨迹数据的收集</p>
+<pre class="mermaid">
+  graph LR
 产生轨迹数据,注重灵活性和效率--&gt;分析轨迹数据,更新模型参数,注重性能
-</code></pre><h1 id="如何生成轨迹数据">如何生成轨迹数据？</h1>
+</pre>
+<h1 id="如何生成轨迹数据">如何生成轨迹数据？</h1>
 <h2 id="什么是轨迹数据">什么是轨迹数据？</h2>
 <p>轨迹是智能体（Agent）在与环境（Environment）进行一次完整或部分的互动过程中，所经历的一系列状态、动作和奖励的记录。
 τ = (S₀, A₀, R₁, S₁, A₁, R₂, S₂, &hellip;, Sₜ, Aₜ, Rₜ₊₁, Sₜ₊₁, &hellip;, Sₙ)</p>
@@ -501,5 +494,14 @@ P--&gt;F
   </div>
 </footer>
 
+    
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.js';
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: 'neutral' 
+      });
+    </script>
+    
   </body>
 </html>

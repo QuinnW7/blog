@@ -6,8 +6,43 @@
     <description>Recent content in Welcome to My Blog on Quinn&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 Nov 2025 10:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 18 Nov 2025 10:00:00 +0800</lastBuildDate>
     <atom:link href="https://quinnw7.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AngelFlow</title>
+      <link>https://quinnw7.github.io/blog/assay/openhands/</link>
+      <pubDate>Tue, 18 Nov 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/assay/openhands/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>《如何为微信公众号打造一个拥有记忆和风格的AI助手？》</title>
+      <link>https://quinnw7.github.io/blog/assay/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/</link>
+      <pubDate>Wed, 12 Nov 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/assay/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>python性能分析</title>
+      <link>https://quinnw7.github.io/blog/assay/python%E6%80%A7%E8%83%BD/</link>
+      <pubDate>Wed, 12 Nov 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/assay/python%E6%80%A7%E8%83%BD/</guid>
+      <description>&lt;p&gt;参考文章：https://blog.csdn.net/weixin_43700866/article/details/134443380&lt;/p&gt;&#xA;&lt;p&gt;kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-75767487d6-7zd28:/usr/local/agent-flow-proxy/remote_openhands/mem.py mem.py&lt;/p&gt;&#xA;&lt;p&gt;当前在压测openhands proxy,底层openhands需要分析下cpu利用率&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux-内核日志</title>
+      <link>https://quinnw7.github.io/blog/assay/%E6%9F%A5%E7%9C%8B%E5%86%85%E6%A0%B8%E6%97%A5%E5%BF%97/</link>
+      <pubDate>Fri, 07 Nov 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/assay/%E6%9F%A5%E7%9C%8B%E5%86%85%E6%A0%B8%E6%97%A5%E5%BF%97/</guid>
+      <description>&lt;p&gt;背景： 在压测一个模块，但发现pod里有oom的日志，想定位下先&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RL 行业宏观调研</title>
+      <link>https://quinnw7.github.io/blog/assay/rl-%E8%A1%8C%E4%B8%9A%E5%AE%8F%E8%A7%82%E8%B0%83%E7%A0%94/</link>
+      <pubDate>Fri, 07 Nov 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/assay/rl-%E8%A1%8C%E4%B8%9A%E5%AE%8F%E8%A7%82%E8%B0%83%E7%A0%94/</guid>
+      <description></description>
+    </item>
     <item>
       <title>RL infra</title>
       <link>https://quinnw7.github.io/blog/assay/rl-infra/</link>
@@ -30,11 +65,18 @@
       <description>&lt;p&gt;feature/angentflow-deepswe 分支&lt;/p&gt;</description>
     </item>
     <item>
-      <title>AngelFlow</title>
+      <title>AngelFlow(初版)</title>
       <link>https://quinnw7.github.io/blog/assay/agentflow/</link>
       <pubDate>Tue, 04 Nov 2025 10:00:00 +0800</pubDate>
       <guid>https://quinnw7.github.io/blog/assay/agentflow/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;img.png&#34; alt=&#34;img.png&#34;&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;介绍AngelFlow初版，后续将废弃⚠️&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AngelFlow压测</title>
+      <link>https://quinnw7.github.io/blog/assay/agentflow%E5%8E%8B%E6%B5%8B/</link>
+      <pubDate>Tue, 04 Nov 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/assay/agentflow%E5%8E%8B%E6%B5%8B/</guid>
+      <description></description>
     </item>
     <item>
       <title>深度学习4：强化学习</title>
@@ -79,7 +121,7 @@
       <description>&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;高级产品经理（Senior PM）需要具备的核心能力&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;作为5年后台开发，如何系统提升以成功转型&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
     </item>
     <item>
-      <title>2025.09.18</title>
+      <title>eino demo</title>
       <link>https://quinnw7.github.io/blog/product/eino/</link>
       <pubDate>Thu, 18 Sep 2025 10:00:00 +0800</pubDate>
       <guid>https://quinnw7.github.io/blog/product/eino/</guid>
@@ -188,7 +230,7 @@
       <link>https://quinnw7.github.io/blog/tech/work/005-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93/</link>
       <pubDate>Fri, 23 May 2025 13:42:33 +0800</pubDate>
       <guid>https://quinnw7.github.io/blog/tech/work/005-%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93/</guid>
-      <description>&lt;p&gt;大纲：&lt;/p&gt;&#xA;&lt;p&gt;引言：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;未来世界长什么样？&#xA;&lt;ul&gt;&#xA;&lt;li&gt;引出AGI&#xA;&lt;ul&gt;&#xA;&lt;li&gt;引出MAS&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;提一嘴单智能体，然后介绍MAS的关键实现技术&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;背景&#34;&gt;背景&lt;/h1&gt;&#xA;&lt;p&gt;基于单智能体基础上，扩展&lt;/p&gt;&#xA;&lt;h1 id=&#34;目标&#34;&gt;目标&lt;/h1&gt;&#xA;&lt;p&gt;AGI 的全称是 Artificial General Intelligence（通用人工智能），指的是一种理论上具备人类水平理解和学习能力的智能体，能够在任何认知任务中像人类一样思考、学习和解决问题（甚至超越人类）&lt;/p&gt;&#xA;&lt;p&gt;多智能体系统（MAS）是AGI的必经之路： 当前通过多个专用Agent协作，逐步逼近复杂任务处理能力（如Manus AI调度数十个Agent完成全链工作流）。&lt;/p&gt;&#xA;&lt;p&gt;A2A 开源智能体通信协议&#xA;&lt;a href=&#34;https://developers.googleblog.com/zh-hans/a2a-a-new-era-of-agent-interoperability/&#34;&gt;https://developers.googleblog.com/zh-hans/a2a-a-new-era-of-agent-interoperability/&lt;/a&gt;&lt;/p&gt;</description>
+      <description></description>
     </item>
     <item>
       <title>原则</title>
@@ -216,7 +258,7 @@
       <link>https://quinnw7.github.io/blog/tech/work/004-%E7%9B%91%E6%8E%A7%E4%BC%98%E5%8C%96%E6%9F%A5%E8%AF%A2/</link>
       <pubDate>Thu, 22 May 2025 10:42:33 +0800</pubDate>
       <guid>https://quinnw7.github.io/blog/tech/work/004-%E7%9B%91%E6%8E%A7%E4%BC%98%E5%8C%96%E6%9F%A5%E8%AF%A2/</guid>
-      <description>&lt;p&gt;挑战是微信全景监控，功能分为：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;数据上报：峰值7亿/min&lt;/li&gt;&#xA;&lt;li&gt;数据查询：80w/min，平均响应时间较长：1000ms~2000ms&#xA;&lt;ul&gt;&#xA;&lt;li&gt;接口：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;维度枚举查询&lt;/li&gt;&#xA;&lt;li&gt;时间序列查询&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description></description>
     </item>
     <item>
       <title>智能体创作平台</title>

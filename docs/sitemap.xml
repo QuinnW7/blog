@@ -2,13 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://quinnw7.github.io/blog/</loc>
+    <lastmod>2025-11-20T10:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://quinnw7.github.io/blog/assay/openhands/</loc>
+    <lastmod>2025-11-18T10:00:00+08:00</lastmod>
+  </url><url>
     <loc>https://quinnw7.github.io/blog/assay/</loc>
-    <lastmod>2025-11-06T10:00:00+08:00</lastmod>
+    <lastmod>2025-11-18T10:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://quinnw7.github.io/blog/assay/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/</loc>
+    <lastmod>2025-11-12T10:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://quinnw7.github.io/blog/assay/python%E6%80%A7%E8%83%BD/</loc>
+    <lastmod>2025-11-12T10:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://quinnw7.github.io/blog/assay/%E6%9F%A5%E7%9C%8B%E5%86%85%E6%A0%B8%E6%97%A5%E5%BF%97/</loc>
+    <lastmod>2025-11-07T10:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://quinnw7.github.io/blog/assay/rl-%E8%A1%8C%E4%B8%9A%E5%AE%8F%E8%A7%82%E8%B0%83%E7%A0%94/</loc>
+    <lastmod>2025-11-07T10:00:00+08:00</lastmod>
   </url><url>
     <loc>https://quinnw7.github.io/blog/assay/rl-infra/</loc>
-    <lastmod>2025-11-06T10:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://quinnw7.github.io/blog/</loc>
     <lastmod>2025-11-06T10:00:00+08:00</lastmod>
   </url><url>
     <loc>https://quinnw7.github.io/blog/assay/standford-agentflow/</loc>
@@ -18,6 +33,9 @@
     <lastmod>2025-11-04T10:00:00+08:00</lastmod>
   </url><url>
     <loc>https://quinnw7.github.io/blog/assay/agentflow/</loc>
+    <lastmod>2025-11-04T10:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://quinnw7.github.io/blog/assay/agentflow%E5%8E%8B%E6%B5%8B/</loc>
     <lastmod>2025-11-04T10:00:00+08:00</lastmod>
   </url><url>
     <loc>https://quinnw7.github.io/blog/assay/llm/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A04%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</loc>

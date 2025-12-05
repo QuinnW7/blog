@@ -24,13 +24,12 @@ title = '2025.11.18'
 
 提升：
 - 练功
-
-
-
-
-
-提升：
 - 教练式领导力：https://portal.learn.woa.com/training/mooc/projectDetail?mooc_course_id=1UPixfwy
+
+
+
+
+
 
   
 

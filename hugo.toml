@@ -21,18 +21,18 @@ weight = 2
 name = "Read"
 url = "/read"
 weight = 3
-[[menu.main]]
-name = "Stock"
-url = "/stock"
-weight = 4
+#[[menu.main]]
+#name = "Stock"
+#url = "/stock"
+#weight = 4
 [[menu.main]]
 name = "Life Coach"
 url = "/life_coach"
 weight = 5
-[[menu.main]]
-name = "Diary"
-url = "/diary"
-weight = 6
+#[[menu.main]]
+#name = "Diary"
+#url = "/diary"
+#weight = 6
 [[menu.main]]
 name = "Product"
 url = "/product"
@@ -41,4 +41,8 @@ weight = 7
 name = "Assay"
 url = "/assay"
 weight = 8
-
+[markup]
+[markup.tableOfContents]
+startLevel = 1  # 默认是 2，我们把它改成 1
+endLevel = 3    # 目录包含到 h3，你可以根据需要调整
+ordered = false # false 是圆点列表, true 是数字列表

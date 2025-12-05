@@ -3,10 +3,9 @@ date = '2025-11-07T10:00:00+08:00'
 draft = false
 title = 'Linux-内核日志'
 +++
+背景： 在压测一个模块，但发现pod里有oom的日志，想定位下先
+<!--more-->
 
-背景：
-
-在压测一个模块，但发现pod里有oom的日志，想定位下先
 
 ```bash
 [Fri Nov  7 15:28:33 2025] oom-kill:constraint=CONSTRAINT_MEMCG,nodemask=(null),cpuset=/,mems_allowed=0,oom_memcg=/tms/sec_saas,task_memcg=/tms/sec_saas,task=tdsp-container,pid=2080332,uid=0
@@ -44,6 +43,11 @@ kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-86475b6b6d-5m
 [test_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunInfer.prof](..%2F..%2F..%2F..%2F..%2F..%2FDownloads%2Ftest_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunInfer.prof)
 [test_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunEval.prof](..%2F..%2F..%2F..%2F..%2F..%2FDownloads%2Ftest_job_quinnyqwu_103_single_2025-11-13_16-07-10_21_profile_RunEval.prof)
 ```
+
+
+kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-86475b6b6d-272bt:/usr/local/agent-flow-proxy/remote_openhands/test_job_quinnyqwu_133_single_2025-11-19_15-07-45_10_profile_RunEval.prof test_job_quinnyqwu_133_single_2025-11-19_15-07-45_10_profile_RunEval.prof
+kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-86475b6b6d-272bt:/usr/local/agent-flow-proxy/remote_openhands/test_job_quinnyqwu_133_single_2025-11-19_15-07-45_10_profile_RunInfer.prof test_job_quinnyqwu_133_single_2025-11-19_15-07-45_10_profile_RunInfer.prof
+
 
 发现没去掉日志也是100多秒，没有400多秒了，所以有问题，而且这次的cpu利用率高起来了
 8c24g 改完搞一下

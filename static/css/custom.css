@@ -1,0 +1,13 @@
+/* static/css/custom.css */
+
+/* 强制让目录的有序列表显示数字 */
+.toc ol {
+    list-style-type: decimal !important; /* 'decimal' 就是 1, 2, 3... */
+    padding-left: 2em; /* 增加左内边距，给数字留出空间，可以调整这个值 */
+}
+
+/* 如果嵌套的子目录也需要编号 (例如 1.1, 1.2)，可以添加这个 */
+.toc ol ol {
+    list-style-type: lower-alpha; /* a, b, c... */
+    padding-left: 2em;
+}

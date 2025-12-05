@@ -1,13 +1,38 @@
 +++
 date = '2025-11-04T10:00:00+08:00'
 draft = false
-title = 'AngelFlow'
+title = 'AngelFlow(初版)'
 +++
+介绍AngelFlow初版，后续将废弃⚠️ 
+
+<!--more-->
+
+# controller
+有几个接口+定时器，现在要改的是定时器，就是之前将直接变Failed的地方，判断下超时，只有超时的才执行
+
+ProcessTask：
+- 先将running,releasing,suspending,suspended的任务全都捞出来，然后获取服务proxy，然后进行处理
+- 再遍历任务列表，对于作业正在停止中 (Releasing)的和作业正在暂停中 (Suspending)， 查询该 Job 下是否还有未终结的 Task（状态为 Canceling, Running, Wait 的任务数）。
+  如果未终结的任务数 <= 0（说明所有子任务都已结束），则调用 StopJob 将作业状态更新为 已停止。
+  如果未终结的任务数 <= 0（说明所有子任务都已暂停或结束），则调用 MarkJobSuspended 将作业状态更新为 已暂停。
+  优雅退出机制：代码没有直接强制把 Job 设为停止，而是先检查 Task 数量。这说明这是一个异步的优雅停止/暂停机制，必须等所有子任务处理完（或取消完）后，Job 才会正式结束。
+  并发安全：状态检查部分放在 go func 中执行，提高了主循环的处理速度，避免因为数据库 Count 操作阻塞主流程
+- DealJob 的作用是：在分布式锁的保护下，对单个 Job 包含的 Task 进行“清理关闭 -> 维护运行 -> 启动新任务”的流水线处理，并控制处理节奏以减轻系统负载。
+
+
+
+```go
+		if time.Now().UnixMilli()-findTask.UpdatedAt > model.GetTaskDealTimeIntervalConfig(ctx) {
+			log.InfoContextf(ctx, "close task fail but beyond time window")
+			err = task.DefaultTaskDbManager.UpdateTaskStatusToFinalDirect(ctx, taskId, model.StatusFailed, "close task fail")
+			return err
+		}
+		log.InfoContextf(ctx, "close task fail but within time window")
+
+```
 
 
 ![img.png](img.png)
-
-
 
 asyncio.run() 是 Python 3.7 版本引入的一个高级函数，它是 启动和运行一个顶层 async 函数（协程）的最简单、最推荐的方式。
 

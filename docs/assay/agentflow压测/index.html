@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>AngelFlow压测 | Quinn&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.147.3">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/blog/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://quinnw7.github.io/blog/assay/agentflow%E5%8E%8B%E6%B5%8B/">
+    
+
+    <meta property="og:url" content="https://quinnw7.github.io/blog/assay/agentflow%E5%8E%8B%E6%B5%8B/">
+  <meta property="og:site_name" content="Quinn&#39;s Blog">
+  <meta property="og:title" content="AngelFlow压测">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="assay">
+    <meta property="article:published_time" content="2025-11-04T10:00:00+08:00">
+    <meta property="article:modified_time" content="2025-11-04T10:00:00+08:00">
+
+  <meta itemprop="name" content="AngelFlow压测">
+  <meta itemprop="datePublished" content="2025-11-04T10:00:00+08:00">
+  <meta itemprop="dateModified" content="2025-11-04T10:00:00+08:00">
+  <meta itemprop="wordCount" content="326">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AngelFlow压测">
+
+      
+    
+	
+
+  </head><body class="ma0 garamond bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/blog/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Quinn&#39;s Blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/tech" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/read" title="Read page">
+              Read
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/life_coach" title="Life Coach page">
+              Life Coach
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/product" title="Product page">
+              Product
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/assay" title="Assay page">
+              Assay
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Assays
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">AngelFlow压测</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-11-04T10:00:00+08:00">November 4, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>minimax</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sk-pmSKwkRgT989w5T5yY3UnWYqeIstRRyzJruOqtFeqslU2deG
+</span></span><span style="display:flex;"><span>eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJHcm91cE5hbWUiOiJxdWlubiIsIlVzZXJOYW1lIjoicXVpbm4iLCJBY2NvdW50IjoiIiwiU3ViamVjdElEIjoiMTk5MDc5MTQyNzk2NTA2MzM3OCIsIlBob25lIjoiMTg4NDUwNzQxNTgiLCJHcm91cElEIjoiMTk5MDc5MTQyNzk1NjY3NDc3MCIsIlBhZ2VOYW1lIjoiIiwiTWFpbCI6IiIsIkNyZWF0ZVRpbWUiOiIyMDI1LTExLTE5IDEwOjU4OjQ2IiwiVG9rZW5UeXBlIjo0LCJpc3MiOiJtaW5pbWF4In0.RxMVINh1KUepRApe4xZ2LaY2c1oJrQ5HE03nD-L8QsU4OaoQ1pmdfhmn82eIfrBXObZu3hHcJ2XWNjY1CRCfnsJbZE6iwKOBDQG25sJWc06Z1KrBbOZiDhyqx_KHKGYJlRLQQKP29GlzeYKCjxYnzxIO04mwijAczxY-Sll2aBe4PXoQFLqZ5cqpYZ2ysCluV4FOlEsJSsXIEi4D2Wg07fYNygCjsZrF4Ypn-YSXxJqjmPLuutF0ufHoY9ABaGvuLz7oykn09xjoDDf55ptxX4T5VyWbcvS0hQ1lKBX87Ib72wrNz0Ts6Dnti1e7Itq9Iq4lZdDdwS1kjJlcIeZZKg
+</span></span></code></pre></div><h1 id="内存">内存</h1>
+<p>无非就是加大并发，然后查看内存日志看下有没有oom</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>free -h <span style="color:#75715e"># 查看当前内存剩余情况 </span>
+</span></span><span style="display:flex;"><span>dmesg -T|grep <span style="color:#e6db74">&#34;killed&#34;</span>
+</span></span></code></pre></div><p>在这里深入探讨了下oom的分类情况：</p>
+<h2 id="constraint_memcg-cgroup-oom">CONSTRAINT_MEMCG (Cgroup OOM)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>Wed Nov <span style="color:#ae81ff">12</span> 20:13:52 2025<span style="color:#f92672">]</span> oom-kill:constraint<span style="color:#f92672">=</span>CONSTRAINT_MEMCG,nodemask<span style="color:#f92672">=(</span>null<span style="color:#f92672">)</span>,cpuset<span style="color:#f92672">=</span>c5ecaabf7ab8c6aa87517337d80574f585bed86875a8a48f699a23e15fd607d7,mems_allowed<span style="color:#f92672">=</span>0,oom_memcg<span style="color:#f92672">=</span>/kubepods/pod1497cd14-3341-4f8e-914a-f3981c865110,task_memcg<span style="color:#f92672">=</span>/kubepods/pod1497cd14-3341-4f8e-914a-f3981c865110/c5ecaabf7ab8c6aa87517337d80574f585bed86875a8a48f699a23e15fd607d7,task<span style="color:#f92672">=</span>python3,pid<span style="color:#f92672">=</span>2830644,uid<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Wed Nov <span style="color:#ae81ff">12</span> 20:13:52 2025<span style="color:#f92672">]</span> Memory cgroup out of memory: Killed process <span style="color:#ae81ff">2830644</span> <span style="color:#f92672">(</span>python3<span style="color:#f92672">)</span> total-vm:25102400kB, anon-rss:25022796kB, file-rss:5388kB, shmem-rss:0kB, UID:0 pgtables:49036kB oom_score_adj:-998
+</span></span></code></pre></div><p>这里的“资源池”是单个 Cgroup 可用的内存。
+触发条件非常简单直接：当一个 Cgroup 的当前总内存使用量 (memory.usage_in_bytes) 超过了 为其设定的硬性限制 (memory.limit_in_bytes) 时，OOM Killer 立即被针对该 Cgroup 触发。
+这里的“总内存使用量”通常包括： 匿名内存 (Anonymous Pages)和页面缓存 (Page Cache)。这个判断过程是确定性的、机械的。 在这个过程中，内核完全不关心整个系统（节点）还有多少空闲内存。即使节点上还有 100GB 的空闲内存，只要你的这个 Cgroup 试图突破它自己的那 5GB 的小限制，OOM Killer 就会被精准地调用。</p>
+<h2 id="cvm-constraint_none-global-oom">CVM-CONSTRAINT_NONE (Global OOM)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>Wed Nov <span style="color:#ae81ff">12</span> 16:21:27 2025<span style="color:#f92672">]</span> oom-kill:constraint<span style="color:#f92672">=</span>CONSTRAINT_NONE,nodemask<span style="color:#f92672">=(</span>null<span style="color:#f92672">)</span>,cpuset<span style="color:#f92672">=</span>/,mems_allowed<span style="color:#f92672">=</span>0,global_oom,task_memcg<span style="color:#f92672">=</span>/user.slice/user-0.slice/session-1860939.scope,task<span style="color:#f92672">=</span>python3,pid<span style="color:#f92672">=</span>3668890,uid<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Wed Nov <span style="color:#ae81ff">12</span> 16:21:27 2025<span style="color:#f92672">]</span> Out of memory: Killed process <span style="color:#ae81ff">3668890</span> <span style="color:#f92672">(</span>python3<span style="color:#f92672">)</span> total-vm:5663336kB, anon-rss:5553100kB, file-rss:0kB, shmem-rss:0kB, UID:0 pgtables:10968kB oom_score_adj:0
+</span></span></code></pre></div><p>这里的“资源池”是整个操作系统的总可用内存。</p>
+<p>触发条件要复杂得多，它更像是一个多因素综合评估，而非简单的阈值判断。</p>
+<p>内核并不会等到可用内存精确为 0 的时候才行动，因为那样就太晚了。它有一套复杂的水线 (watermark) 机制和内存回收 (reclaim) 压力评估来决定何时触发全局 OOM。
+简化的触发流程如下：
+内存压力出现: 一个进程请求分配内存，但内核发现没有足够数量的空闲页 (free pages) 来满足请求。
+尝试直接回收 (Direct Reclaim): 内核会暂停当前请求内存的进程，并尝试同步地、紧急地释放一些内存。它会尝试：
+收缩页面缓存 (Shrinking page cache): 将干净的文件缓存页释放掉（因为数据还在磁盘上，以后可以再读回来）。
+换出匿名页 (Swapping out anonymous pages): 将不常用的匿名内存（如程序堆内存）写入到 Swap 交换空间。 &hellip;以及其他一些回收策略。
+回收失败或压力过大: 如果经过一轮或多轮的“直接回收”后，仍然无法释放出足够的内存来满足最初的请求，说明系统正处于极度内存压力之下。内核会评估这种回收的“努力程度”和“成功率”。
+触发全局 OOM Killer: 当内核的内存管理子系统判断**“通过常规回收手段已经无法满足内存分配请求，系统即将陷入不稳定状态”时，它就会最终决定**启动全局 OOM Killer。这被视为“最后的手段”。
+所以，Global OOM 的触发条件可以概括为：
+当系统处于高内存压力下，并且内核的内存回收机制 (reclaim) 在尝试满足一个内存分配请求时持续失败，无法在合理的时间内释放出足够的空闲内存页时，全局 OOM Killer 才会被触发，以避免系统完全锁定或崩溃。</p>
+<p>内存分配脚本：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> time
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> sys
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># --- 配置 ---</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 目标内存占用量 (GB)</span>
+</span></span><span style="display:flex;"><span>TARGET_GB <span style="color:#f92672">=</span> <span style="color:#ae81ff">23.8</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># --- 结束配置 ---</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1 GB = 1024*1024*1024 bytes</span>
+</span></span><span style="display:flex;"><span>BYTES_PER_GB <span style="color:#f92672">=</span> <span style="color:#ae81ff">1024</span> <span style="color:#f92672">**</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>TARGET_BYTES <span style="color:#f92672">=</span> int(TARGET_GB <span style="color:#f92672">*</span> BYTES_PER_GB)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 为了避免因内存碎片化一次性分配失败，我们分块进行分配</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 例如，每次分配 100MB</span>
+</span></span><span style="display:flex;"><span>CHUNK_SIZE_MB <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>CHUNK_SIZE_BYTES <span style="color:#f92672">=</span> CHUNK_SIZE_MB <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span> <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 用于持有所有内存块的列表，防止被垃圾回收</span>
+</span></span><span style="display:flex;"><span>memory_holder <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">allocate_memory</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    逐步分配内存直到达到目标大小。
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    allocated_bytes <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;目标：占用 </span><span style="color:#e6db74">{</span>TARGET_GB<span style="color:#e6db74">:</span><span style="color:#e6db74">.2f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> GB 内存。&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> allocated_bytes <span style="color:#f92672">&lt;</span> TARGET_BYTES:
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># 计算本次需要分配的字节数</span>
+</span></span><span style="display:flex;"><span>            bytes_to_alloc <span style="color:#f92672">=</span> min(CHUNK_SIZE_BYTES, TARGET_BYTES <span style="color:#f92672">-</span> allocated_bytes)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># 创建一个 bytearray 对象来占用内存</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># bytearray 是一个可变的字节序列，非常适合这个任务</span>
+</span></span><span style="display:flex;"><span>            chunk <span style="color:#f92672">=</span> bytearray(bytes_to_alloc)
+</span></span><span style="display:flex;"><span>            memory_holder<span style="color:#f92672">.</span>append(chunk)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            allocated_bytes <span style="color:#f92672">+=</span> len(chunk)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># 实时显示进度</span>
+</span></span><span style="display:flex;"><span>            allocated_gb <span style="color:#f92672">=</span> allocated_bytes <span style="color:#f92672">/</span> BYTES_PER_GB
+</span></span><span style="display:flex;"><span>            progress <span style="color:#f92672">=</span> (allocated_bytes <span style="color:#f92672">/</span> TARGET_BYTES) <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># 使用 \r 实现单行刷新，避免刷屏</span>
+</span></span><span style="display:flex;"><span>            sys<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>write(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\r</span><span style="color:#e6db74">已分配: </span><span style="color:#e6db74">{</span>allocated_gb<span style="color:#e6db74">:</span><span style="color:#e6db74">.2f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> GB / </span><span style="color:#e6db74">{</span>TARGET_GB<span style="color:#e6db74">:</span><span style="color:#e6db74">.2f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> GB (</span><span style="color:#e6db74">{</span>progress<span style="color:#e6db74">:</span><span style="color:#e6db74">.1f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">%)&#34;</span>)
+</span></span><span style="display:flex;"><span>            sys<span style="color:#f92672">.</span>stdout<span style="color:#f92672">.</span>flush()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">内存分配完成。&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;脚本将保持运行以占用内存。&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;按 Ctrl+C 退出，脚本将自动释放所有内存。&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">MemoryError</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 如果系统物理内存不足，会在这里捕获到异常</span>
+</span></span><span style="display:flex;"><span>        allocated_gb <span style="color:#f92672">=</span> len(memory_holder) <span style="color:#f92672">*</span> CHUNK_SIZE_BYTES <span style="color:#f92672">/</span> BYTES_PER_GB
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">错误：内存不足！系统无法分配更多内存。&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;已成功分配约 </span><span style="color:#e6db74">{</span>allocated_gb<span style="color:#e6db74">:</span><span style="color:#e6db74">.2f</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> GB。&#34;</span>)
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">&#34;脚本将保持已分配的内存，按 Ctrl+C 退出。&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">发生未知错误: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hold_memory</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    进入一个无限循环，以保持脚本运行，从而持有已分配的内存。
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">KeyboardInterrupt</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># 当用户按下 Ctrl+C 时，这个异常会被触发</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    allocate_memory()
+</span></span><span style="display:flex;"><span>    hold_memory()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">程序已退出。Python 垃圾回收器将自动释放内存。&#34;</span>)
+</span></span></code></pre></div><h1 id="cpu">cpu</h1><ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://quinnw7.github.io/blog/" >
+    &copy;  Quinn's Blog 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+    
+  </body>
+</html>

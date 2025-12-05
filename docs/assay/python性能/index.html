@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>python性能分析 | Quinn&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="参考文章：https://blog.csdn.net/weixin_43700866/article/details/134443380
+kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-75767487d6-7zd28:/usr/local/agent-flow-proxy/remote_openhands/mem.py mem.py
+当前在压测openhands proxy,底层openhands需要分析下cpu利用率">
+    <meta name="generator" content="Hugo 0.147.3">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/blog/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://quinnw7.github.io/blog/assay/python%E6%80%A7%E8%83%BD/">
+    
+
+    <meta property="og:url" content="https://quinnw7.github.io/blog/assay/python%E6%80%A7%E8%83%BD/">
+  <meta property="og:site_name" content="Quinn&#39;s Blog">
+  <meta property="og:title" content="python性能分析">
+  <meta property="og:description" content="参考文章：https://blog.csdn.net/weixin_43700866/article/details/134443380
+kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-75767487d6-7zd28:/usr/local/agent-flow-proxy/remote_openhands/mem.py mem.py
+当前在压测openhands proxy,底层openhands需要分析下cpu利用率">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="assay">
+    <meta property="article:published_time" content="2025-11-12T10:00:00+08:00">
+    <meta property="article:modified_time" content="2025-11-12T10:00:00+08:00">
+
+  <meta itemprop="name" content="python性能分析">
+  <meta itemprop="description" content="参考文章：https://blog.csdn.net/weixin_43700866/article/details/134443380
+kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-75767487d6-7zd28:/usr/local/agent-flow-proxy/remote_openhands/mem.py mem.py
+当前在压测openhands proxy,底层openhands需要分析下cpu利用率">
+  <meta itemprop="datePublished" content="2025-11-12T10:00:00+08:00">
+  <meta itemprop="dateModified" content="2025-11-12T10:00:00+08:00">
+  <meta itemprop="wordCount" content="37">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="python性能分析">
+  <meta name="twitter:description" content="参考文章：https://blog.csdn.net/weixin_43700866/article/details/134443380
+kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-75767487d6-7zd28:/usr/local/agent-flow-proxy/remote_openhands/mem.py mem.py
+当前在压测openhands proxy,底层openhands需要分析下cpu利用率">
+
+      
+    
+	
+
+  </head><body class="ma0 garamond bg-near-white production">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/blog/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Quinn&#39;s Blog
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/tech" title="Tech page">
+              Tech
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/read" title="Read page">
+              Read
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/life_coach" title="Life Coach page">
+              Life Coach
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/product" title="Product page">
+              Product
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white white-90 no-underline" href="/blog/assay" title="Assay page">
+              Assay
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  
+  <article class="flex-l mw8 center ph3 flex-wrap justify-between">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Assays
+      </aside><div id="sharing" class="mt3 ananke-socials"></div>
+<h1 class="f1 athelas mt3 mb1">python性能分析</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-11-12T10:00:00+08:00">November 12, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>参考文章：https://blog.csdn.net/weixin_43700866/article/details/134443380</p>
+<p>kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-75767487d6-7zd28:/usr/local/agent-flow-proxy/remote_openhands/mem.py mem.py</p>
+<p>当前在压测openhands proxy,底层openhands需要分析下cpu利用率</p>
+<p>cpu：使用cprofile性能分析</p>
+<p>提供了python程序的确定性性能分析。</p>
+<p>查看该容器被允许使用的最大内存量（内存天花板），单位是字节 (Bytes)
+cat /sys/fs/cgroup/memory/memory.limit_in_bytes
+该命令执行的那一瞬间，该容器内所有进程总共使用的内存量，单位是字节 (Bytes)
+cat /sys/fs/cgroup/memory/memory.usage_in_bytes</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl exec -it memory-test-pod -- bash
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-75767487d6-7zd28:/usr/local/agent-flow-proxy/remote_openhands/test_job_quinnyqwu_101_single_2025-11-12_21-47-40_0_profile_RunInfer.prof test_job_quinnyqwu_101_single_2025-11-12_21-47-40_0_profile_RunInfer.prof
+</span></span><span style="display:flex;"><span>test_job_quinnyqwu_102_single_2025-11-13_10-38-50_15_profile_RunEval.prof  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-595556bf48-c9lfc:/usr/local/agent-flow-proxy/remote_openhands/test_job_quinnyqwu_102_single_2025-11-13_10-38-50_15_profile_RunEval.prof test_job_quinnyqwu_102_single_2025-11-13_10-38-50_15_profile_RunEval.prof
+</span></span><span style="display:flex;"><span>kubectl cp angel-agent-pre-prj-jp2sncp2/agent-flow-openhands-proxy-595556bf48-c9lfc:/usr/local/agent-flow-proxy/remote_openhands/test_job_quinnyqwu_102_single_2025-11-13_10-38-50_15_profile_RunInfer.prof test_job_quinnyqwu_102_single_2025-11-13_10-38-50_15_profile_RunInfer.prof
+</span></span></code></pre></div><h1 id="cpu">cpu</h1><ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="https://quinnw7.github.io/blog/" >
+    &copy;  Quinn's Blog 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+    
+  </body>
+</html>
