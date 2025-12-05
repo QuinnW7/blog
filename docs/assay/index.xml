@@ -6,8 +6,15 @@
     <description>Recent content in Assays on Quinn&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Nov 2025 10:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 02 Dec 2025 10:00:00 +0800</lastBuildDate>
     <atom:link href="https://quinnw7.github.io/blog/assay/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PYTHON</title>
+      <link>https://quinnw7.github.io/blog/assay/python/</link>
+      <pubDate>Tue, 02 Dec 2025 10:00:00 +0800</pubDate>
+      <guid>https://quinnw7.github.io/blog/assay/python/</guid>
+      <description></description>
+    </item>
     <item>
       <title>AngelFlow</title>
       <link>https://quinnw7.github.io/blog/assay/openhands/</link>
@@ -20,7 +27,7 @@
       <link>https://quinnw7.github.io/blog/assay/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/</link>
       <pubDate>Wed, 12 Nov 2025 10:00:00 +0800</pubDate>
       <guid>https://quinnw7.github.io/blog/assay/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/</guid>
-      <description></description>
+      <description>&lt;p&gt;知识库方案：https://iwiki.woa.com/p/4014329265&#xA;解决了什么问题？&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;回复大量私信&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;过往文章的使用&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;可以利用过往文章回复私信问题&lt;/p&gt;&#xA;&lt;p&gt;那怎么使用的？&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;一键创建智能体&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;技术侧：&lt;/p&gt;&#xA;&lt;p&gt;1、RAG：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;拉取公众号文章，起任务拉取&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;构建和召回&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;2、智能体中台-效果：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;调试&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;创建两个智能体，正式和草稿态&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;3、千人千面：风格- 离线拉取微信公众号主的数据&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;提取公众号主风格&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;遇到哪些问题：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;用户连续问题处理&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;引文相关&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;对微信公众号分身技术方案感兴趣的人，&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;如何做到的千人千面，风格化？&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;如何处理公众号文章的？&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;如何调试智能体的？&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;如何处理消息的？&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;微信代理&#34;&gt;微信代理&lt;/h1&gt;&#xA;&lt;h1 id=&#34;智能体中台&#34;&gt;智能体中台&lt;/h1&gt;&#xA;&lt;h1 id=&#34;知识库中台&#34;&gt;知识库中台&lt;/h1&gt;&#xA;&lt;h1 id=&#34;效果&#34;&gt;效果&lt;/h1&gt;</description>
     </item>
     <item>
       <title>python性能分析</title>

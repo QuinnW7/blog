@@ -49,7 +49,7 @@
   <meta itemprop="description" content="介绍AngelFlow初版，后续将废弃⚠️">
   <meta itemprop="datePublished" content="2025-11-04T10:00:00+08:00">
   <meta itemprop="dateModified" content="2025-11-04T10:00:00+08:00">
-  <meta itemprop="wordCount" content="150">
+  <meta itemprop="wordCount" content="231">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="AngelFlow(初版)">
   <meta name="twitter:description" content="介绍AngelFlow初版，后续将废弃⚠️">
@@ -149,7 +149,25 @@
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>介绍AngelFlow初版，后续将废弃⚠️</p>
-<p><img src="img.png" alt="img.png"></p>
+<h1 id="controller">controller</h1>
+<p>有几个接口+定时器，现在要改的是定时器，就是之前将直接变Failed的地方，判断下超时，只有超时的才执行</p>
+<p>ProcessTask：</p>
+<ul>
+<li>先将running,releasing,suspending,suspended的任务全都捞出来，然后获取服务proxy，然后进行处理</li>
+<li>再遍历任务列表，对于作业正在停止中 (Releasing)的和作业正在暂停中 (Suspending)， 查询该 Job 下是否还有未终结的 Task（状态为 Canceling, Running, Wait 的任务数）。
+如果未终结的任务数 &lt;= 0（说明所有子任务都已结束），则调用 StopJob 将作业状态更新为 已停止。
+如果未终结的任务数 &lt;= 0（说明所有子任务都已暂停或结束），则调用 MarkJobSuspended 将作业状态更新为 已暂停。
+优雅退出机制：代码没有直接强制把 Job 设为停止，而是先检查 Task 数量。这说明这是一个异步的优雅停止/暂停机制，必须等所有子任务处理完（或取消完）后，Job 才会正式结束。
+并发安全：状态检查部分放在 go func 中执行，提高了主循环的处理速度，避免因为数据库 Count 操作阻塞主流程</li>
+<li>DealJob 的作用是：在分布式锁的保护下，对单个 Job 包含的 Task 进行“清理关闭 -&gt; 维护运行 -&gt; 启动新任务”的流水线处理，并控制处理节奏以减轻系统负载。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>().<span style="color:#a6e22e">UnixMilli</span>()<span style="color:#f92672">-</span><span style="color:#a6e22e">findTask</span>.<span style="color:#a6e22e">UpdatedAt</span> &gt; <span style="color:#a6e22e">model</span>.<span style="color:#a6e22e">GetTaskDealTimeIntervalConfig</span>(<span style="color:#a6e22e">ctx</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">InfoContextf</span>(<span style="color:#a6e22e">ctx</span>, <span style="color:#e6db74">&#34;close task fail but beyond time window&#34;</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">task</span>.<span style="color:#a6e22e">DefaultTaskDbManager</span>.<span style="color:#a6e22e">UpdateTaskStatusToFinalDirect</span>(<span style="color:#a6e22e">ctx</span>, <span style="color:#a6e22e">taskId</span>, <span style="color:#a6e22e">model</span>.<span style="color:#a6e22e">StatusFailed</span>, <span style="color:#e6db74">&#34;close task fail&#34;</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">err</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">InfoContextf</span>(<span style="color:#a6e22e">ctx</span>, <span style="color:#e6db74">&#34;close task fail but within time window&#34;</span>)
+</span></span></code></pre></div><p><img src="img.png" alt="img.png"></p>
 <p>asyncio.run() 是 Python 3.7 版本引入的一个高级函数，它是 启动和运行一个顶层 async 函数（协程）的最简单、最推荐的方式。</p>
 <p>asyncio.run() 到底做了什么？</p>
 <ul>
